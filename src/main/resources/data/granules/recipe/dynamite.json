@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "s",
+    "G",
+    "S"
+  ],
+  "key": {
+    "s": "minecraft:string",
+    "G": "minecraft:gunpowder",
+    "S": [
+      "minecraft:sand",
+      "minecraft:red_sand"
+    ]
+  },
+  "result": {
+    "id": "granules:dynamite",
+    "count": 2
+  }
+}

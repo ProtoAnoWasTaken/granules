@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_floating_dream",
+  "description": {
+    "translate": "music.game.floating_dream"
+  },
+  "length_in_seconds": 205.2,
+  "comparator_output": 1
+}

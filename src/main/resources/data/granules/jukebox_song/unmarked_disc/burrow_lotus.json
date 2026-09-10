@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.burrow_lotus",
+  "description": {
+    "translate": "music.granules.lotus"
+  },
+  "length_in_seconds": 378.408662,
+  "comparator_output": 1
+}

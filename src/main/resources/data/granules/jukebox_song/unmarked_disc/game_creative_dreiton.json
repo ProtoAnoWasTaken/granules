@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_creative_dreiton",
+  "description": {
+    "translate": "music.game.creative.dreiton"
+  },
+  "length_in_seconds": 497.0,
+  "comparator_output": 1
+}

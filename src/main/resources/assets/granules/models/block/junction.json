@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "granules:block/junction_contact",
+    "down": "granules:block/junction_bottom",
+    "up": "granules:block/junction_contact",
+    "north": "granules:block/junction_contact",
+    "south": "granules:block/junction_back",
+    "west": "granules:block/junction_contact",
+    "east": "granules:block/junction_contact"
+  }
+}

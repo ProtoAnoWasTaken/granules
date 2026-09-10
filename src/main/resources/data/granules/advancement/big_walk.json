@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:filled_map"
+    },
+    "title": {
+      "translate": "advancement.granules.big_walk.title"
+    },
+    "description": {
+      "translate": "advancement.granules.big_walk.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:lessons_in_futility",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "the_burrow"
+    }
+  ]
+}

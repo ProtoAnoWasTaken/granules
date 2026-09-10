@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "granules:block/old_world_cyan_rose"
+  }
+}

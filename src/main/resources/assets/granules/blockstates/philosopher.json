@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "granules:block/philosopher",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "granules:block/philosopher",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "granules:block/philosopher"
+    },
+    "facing=south": {
+      "model": "granules:block/philosopher",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "granules:block/philosopher",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "granules:block/philosopher",
+      "y": 270
+    }
+  }
+}

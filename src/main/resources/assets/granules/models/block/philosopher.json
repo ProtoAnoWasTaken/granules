@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "granules:block/philosopher_front",
+    "down": "granules:block/philosopher_base",
+    "up": "granules:block/philosopher_base",
+    "north": "granules:block/philosopher_front",
+    "south": "granules:block/philosopher_back",
+    "west": "granules:block/philosopher_side",
+    "east": "granules:block/philosopher_side"
+  }
+}

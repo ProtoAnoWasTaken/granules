@@ -1,0 +1,43 @@
+{
+  "textures": {
+    "log_side": "granules:block/goldenapple_oak_log",
+    "log_end": "granules:block/goldenapple_oak_log_top",
+    "leaves": "minecraft:block/oak_leaves",
+    "apple": "minecraft:item/golden_apple",
+    "particle": "minecraft:block/oak_leaves"
+  },
+  "elements": [
+    {
+      "from": [6, 0, 6],
+      "to": [10, 10, 10],
+      "faces": {
+        "down": {"texture": "#log_end"},
+        "up": {"texture": "#log_end"},
+        "north": {"texture": "#log_side"},
+        "south": {"texture": "#log_side"},
+        "west": {"texture": "#log_side"},
+        "east": {"texture": "#log_side"}
+      }
+    },
+    {
+      "from": [2, 8, 2],
+      "to": [14, 16, 14],
+      "faces": {
+        "down": {"texture": "#leaves", "tintindex": 0},
+        "up": {"texture": "#leaves", "tintindex": 0},
+        "north": {"texture": "#leaves", "tintindex": 0},
+        "south": {"texture": "#leaves", "tintindex": 0},
+        "west": {"texture": "#leaves", "tintindex": 0},
+        "east": {"texture": "#leaves", "tintindex": 0}
+      }
+    },
+    {
+      "from": [6, 11, 5.75],
+      "to": [10, 15, 6],
+      "faces": {
+        "north": {"texture": "#apple"},
+        "south": {"texture": "#apple"}
+      }
+    }
+  ]
+}

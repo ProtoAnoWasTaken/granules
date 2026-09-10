@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_wet_hands",
+  "description": {
+    "translate": "music.game.wet_hands"
+  },
+  "length_in_seconds": 89.7138775510204,
+  "comparator_output": 1
+}

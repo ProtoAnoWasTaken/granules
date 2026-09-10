@@ -1,0 +1,6 @@
+{
+  "parent": "granules:block/enchanted_planter",
+  "textures": {
+    "soil": "granules:block/planter_soil_empty"
+  }
+}

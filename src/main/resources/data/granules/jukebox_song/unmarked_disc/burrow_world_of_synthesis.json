@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.burrow_world_of_synthesis",
+  "description": {
+    "translate": "music.granules.world_of_synthesis"
+  },
+  "length_in_seconds": 176.927891,
+  "comparator_output": 1
+}

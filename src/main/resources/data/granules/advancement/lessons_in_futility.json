@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:map"
+    },
+    "title": {
+      "translate": "advancement.granules.lessons_in_futility.title"
+    },
+    "description": {
+      "translate": "advancement.granules.lessons_in_futility.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:call_me_paquerette",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "the_burrow"
+    }
+  ]
+}

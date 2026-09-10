@@ -1,0 +1,6 @@
+{
+  "parent": "granules:block/enchanted_cauldron_fluid_low",
+  "textures": {
+    "content": "minecraft:block/water_still"
+  }
+}

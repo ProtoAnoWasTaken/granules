@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:mover"
+    },
+    "title": {
+      "translate": "advancement.granules.people_mover.title"
+    },
+    "description": {
+      "translate": "advancement.granules.people_mover.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minecraft:adventure/root",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "movers"
+    }
+  ]
+}

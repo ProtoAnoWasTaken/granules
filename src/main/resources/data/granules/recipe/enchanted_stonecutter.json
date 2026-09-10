@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "granules:enchanted_tome",
+  "base": "minecraft:stonecutter",
+  "result": {
+    "id": "granules:enchanted_stonecutter"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ]
+}

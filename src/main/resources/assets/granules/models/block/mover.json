@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "granules:block/mover_side",
+    "down": "granules:block/mover_base",
+    "up": "granules:block/mover_base",
+    "north": "granules:block/mover_side",
+    "south": "granules:block/mover_side",
+    "west": "granules:block/mover_side",
+    "east": "granules:block/mover_side"
+  }
+}

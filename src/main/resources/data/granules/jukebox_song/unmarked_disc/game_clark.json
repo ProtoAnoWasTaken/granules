@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_clark",
+  "description": {
+    "translate": "music.game.clark"
+  },
+  "length_in_seconds": 201.58537414965986,
+  "comparator_output": 1
+}

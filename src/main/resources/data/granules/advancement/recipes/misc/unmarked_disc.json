@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:quartz"
+          }
+        ]
+      }
+    },
+    "has_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "granules:unmarked_disc"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_quartz",
+      "has_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "granules:unmarked_disc"
+    ]
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "unmarked_discs"
+    }
+  ]
+}

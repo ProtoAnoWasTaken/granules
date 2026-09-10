@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " PP",
+    "PPP",
+    "MM "
+  ],
+  "key": {
+    "P": "granules:pale_pelt",
+    "M": "minecraft:phantom_membrane"
+  },
+  "result": {
+    "id": "granules:opera_glove"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "the_burrow"
+    }
+  ]
+}

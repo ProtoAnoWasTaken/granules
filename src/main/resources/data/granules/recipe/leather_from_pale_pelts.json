@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PP",
+    "PP"
+  ],
+  "key": {
+    "P": "granules:pale_pelt"
+  },
+  "result": {
+    "id": "minecraft:leather"
+  }
+}

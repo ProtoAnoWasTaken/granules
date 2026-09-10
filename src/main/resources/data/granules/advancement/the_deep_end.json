@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:sponge"
+    },
+    "title": {
+      "translate": "advancement.granules.the_deep_end.title"
+    },
+    "description": {
+      "translate": "advancement.granules.the_deep_end.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:twenty_three_leagues_under_the_sea"
+}

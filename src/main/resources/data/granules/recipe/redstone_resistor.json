@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": "minecraft:lever",
+    "R": "minecraft:redstone_torch",
+    "C": "minecraft:copper_ingot",
+    "S": "minecraft:stone"
+  },
+  "pattern": [
+    " L ",
+    "RCR",
+    "SSS"
+  ],
+  "result": {
+    "id": "granules:redstone_resistor"
+  }
+}

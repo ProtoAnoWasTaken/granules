@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down,open=false,sealed=false": {"model": "minecraft:block/barrel", "x": 180},
+    "facing=down,open=true,sealed=false": {"model": "minecraft:block/barrel_open", "x": 180},
+    "facing=east,open=false,sealed=false": {"model": "minecraft:block/barrel", "x": 90, "y": 90},
+    "facing=east,open=true,sealed=false": {"model": "minecraft:block/barrel_open", "x": 90, "y": 90},
+    "facing=north,open=false,sealed=false": {"model": "minecraft:block/barrel", "x": 90},
+    "facing=north,open=true,sealed=false": {"model": "minecraft:block/barrel_open", "x": 90},
+    "facing=south,open=false,sealed=false": {"model": "minecraft:block/barrel", "x": 90, "y": 180},
+    "facing=south,open=true,sealed=false": {"model": "minecraft:block/barrel_open", "x": 90, "y": 180},
+    "facing=up,open=false,sealed=false": {"model": "minecraft:block/barrel"},
+    "facing=up,open=true,sealed=false": {"model": "minecraft:block/barrel_open"},
+    "facing=west,open=false,sealed=false": {"model": "minecraft:block/barrel", "x": 90, "y": 270},
+    "facing=west,open=true,sealed=false": {"model": "minecraft:block/barrel_open", "x": 90, "y": 270},
+    "facing=down,open=false,sealed=true": {"model": "granules:block/sealed_barrel", "x": 180},
+    "facing=down,open=true,sealed=true": {"model": "granules:block/sealed_barrel", "x": 180},
+    "facing=east,open=false,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90, "y": 90},
+    "facing=east,open=true,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90, "y": 90},
+    "facing=north,open=false,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90},
+    "facing=north,open=true,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90},
+    "facing=south,open=false,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90, "y": 180},
+    "facing=south,open=true,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90, "y": 180},
+    "facing=up,open=false,sealed=true": {"model": "granules:block/sealed_barrel"},
+    "facing=up,open=true,sealed=true": {"model": "granules:block/sealed_barrel"},
+    "facing=west,open=false,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90, "y": 270},
+    "facing=west,open=true,sealed=true": {"model": "granules:block/sealed_barrel", "x": 90, "y": 270}
+  }
+}

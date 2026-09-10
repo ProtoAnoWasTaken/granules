@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": "minecraft:phantom_membrane",
+    "E": "minecraft:ender_eye",
+    "B": "minecraft:bundle"
+  },
+  "pattern": [
+    "MEM",
+    "MBM",
+    "MMM"
+  ],
+  "result": {
+    "id": "granules:somnosatchel"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "lesser_items"
+    }
+  ]
+}

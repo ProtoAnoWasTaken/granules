@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_haggstrom",
+  "description": {
+    "translate": "music.game.haggstrom"
+  },
+  "length_in_seconds": 191.05267573696145,
+  "comparator_output": 1
+}

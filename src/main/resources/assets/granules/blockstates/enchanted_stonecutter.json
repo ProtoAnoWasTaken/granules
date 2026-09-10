@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "granules:block/enchanted_stonecutter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "granules:block/enchanted_stonecutter"
+    },
+    "facing=south": {
+      "model": "granules:block/enchanted_stonecutter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "granules:block/enchanted_stonecutter",
+      "y": 270
+    }
+  }
+}

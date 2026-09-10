@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_nether_concrete_halls",
+  "description": {
+    "translate": "music.game.nether.concrete_halls"
+  },
+  "length_in_seconds": 259.4594784580499,
+  "comparator_output": 1
+}

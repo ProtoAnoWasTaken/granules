@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_echo_in_the_wind",
+  "description": {
+    "translate": "music.game.echo_in_the_wind"
+  },
+  "length_in_seconds": 296.18360416666667,
+  "comparator_output": 1
+}

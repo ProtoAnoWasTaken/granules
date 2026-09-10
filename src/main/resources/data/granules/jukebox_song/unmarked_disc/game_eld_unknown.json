@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_eld_unknown",
+  "description": {
+    "translate": "music.game.eld_unknown"
+  },
+  "length_in_seconds": 296.5466666666667,
+  "comparator_output": 1
+}

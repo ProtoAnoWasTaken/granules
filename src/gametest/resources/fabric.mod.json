@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "granules-tests",
+  "version": "1.0.0",
+  "name": "Granules Game Tests",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "com.puppy.granules.disc.DiscGameTests",
+      "com.puppy.granules.bomb.BombGameTests",
+      "com.puppy.granules.rabbit.RabbitGameTests"
+    ]
+  },
+  "depends": {
+    "granules": "*"
+  }
+}

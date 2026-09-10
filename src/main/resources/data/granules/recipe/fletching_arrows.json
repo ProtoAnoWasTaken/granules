@@ -1,0 +1,16 @@
+{
+  "type": "granules:fletching",
+  "shaft": "minecraft:stick",
+  "fletch": "minecraft:feather",
+  "head": "minecraft:flint",
+  "result": {
+    "id": "minecraft:arrow",
+    "count": 6
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ]
+}

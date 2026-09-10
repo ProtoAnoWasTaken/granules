@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_mice_on_venus",
+  "description": {
+    "translate": "music.game.mice_on_venus"
+  },
+  "length_in_seconds": 280.89385487528347,
+  "comparator_output": 1
+}

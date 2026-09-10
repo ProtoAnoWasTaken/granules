@@ -1,0 +1,20 @@
+{
+  "slots": [
+    "mainhand"
+  ],
+  "min_cost": {
+    "per_level_above_first": 15,
+    "base": 15
+  },
+  "anvil_cost": 6,
+  "max_cost": {
+    "per_level_above_first": 15,
+    "base": 50
+  },
+  "description": {
+    "translate": "enchantment.granules.vampirism"
+  },
+  "max_level": 3,
+  "weight": 2,
+  "supported_items": "#granules:enchantable/vampirism"
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_left_to_bloom",
+  "description": {
+    "translate": "music.game.left_to_bloom"
+  },
+  "length_in_seconds": 342.96,
+  "comparator_output": 1
+}

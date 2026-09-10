@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "soil=empty": {
+      "model": "granules:block/enchanted_planter_empty"
+    },
+    "soil=dirt": {
+      "model": "granules:block/enchanted_planter"
+    },
+    "soil=mud": {
+      "model": "granules:block/enchanted_planter_mud"
+    },
+    "soil=farmland": {
+      "model": "granules:block/enchanted_planter_farmland"
+    },
+    "soil=wet_farmland": {
+      "model": "granules:block/enchanted_planter_farmland_wet"
+    },
+    "soil=grass": {
+      "model": "granules:block/enchanted_planter_grass"
+    },
+    "soil=podzol": {
+      "model": "granules:block/enchanted_planter_podzol"
+    },
+    "soil=sand": {
+      "model": "granules:block/enchanted_planter_sand"
+    },
+    "soil=netherrack": {
+      "model": "granules:block/enchanted_planter_netherrack"
+    },
+    "soil=soul_sand": {
+      "model": "granules:block/enchanted_planter_soul_sand"
+    },
+    "soil=soul_soil": {
+      "model": "granules:block/enchanted_planter_soul_soil"
+    }
+  }
+}

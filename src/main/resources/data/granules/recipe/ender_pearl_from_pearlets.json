@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "granules:ender_pearlet",
+    "granules:ender_pearlet",
+    "granules:ender_pearlet",
+    "granules:ender_pearlet"
+  ],
+  "result": {
+    "id": "minecraft:ender_pearl"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "lesser_items"
+    }
+  ]
+}

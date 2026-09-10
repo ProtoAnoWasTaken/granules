@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "granules:dynamite",
+    "granules:dynamite",
+    "granules:dynamite",
+    "granules:dynamite",
+    "minecraft:sponge",
+    "granules:dynamite",
+    "granules:dynamite",
+    "granules:dynamite",
+    "granules:dynamite"
+  ],
+  "result": {
+    "id": "granules:dry_bomb",
+    "count": 8
+  }
+}

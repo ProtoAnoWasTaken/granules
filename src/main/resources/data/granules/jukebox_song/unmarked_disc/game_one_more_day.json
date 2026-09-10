@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_one_more_day",
+  "description": {
+    "translate": "music.game.one_more_day"
+  },
+  "length_in_seconds": 278.5466666666667,
+  "comparator_output": 1
+}

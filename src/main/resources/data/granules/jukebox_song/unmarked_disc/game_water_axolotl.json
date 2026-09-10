@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_water_axolotl",
+  "description": {
+    "translate": "music.game.water.axolotl"
+  },
+  "length_in_seconds": 303.13885416666665,
+  "comparator_output": 1
+}

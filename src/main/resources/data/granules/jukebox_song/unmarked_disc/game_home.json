@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_home",
+  "description": {
+    "translate": "music.game.home"
+  },
+  "length_in_seconds": 380.213125,
+  "comparator_output": 1
+}

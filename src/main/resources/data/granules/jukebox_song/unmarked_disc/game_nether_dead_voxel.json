@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_nether_dead_voxel",
+  "description": {
+    "translate": "music.game.nether.dead_voxel"
+  },
+  "length_in_seconds": 303.79748299319726,
+  "comparator_output": 1
+}

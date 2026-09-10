@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:somnosatchel"
+    },
+    "title": {
+      "translate": "advancement.granules.remote_access_bundle.title"
+    },
+    "description": {
+      "translate": "advancement.granules.remote_access_bundle.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minecraft:end/find_end_city",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "lesser_items"
+    }
+  ]
+}

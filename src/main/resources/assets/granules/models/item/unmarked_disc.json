@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "granules:item/unmarkeddisc_base",
+    "layer1": "granules:item/unmarkeddisc_hub_bright",
+    "layer2": "granules:item/unmarkeddisc_hub_medium",
+    "layer3": "granules:item/unmarkeddisc_hub_dark"
+  }
+}

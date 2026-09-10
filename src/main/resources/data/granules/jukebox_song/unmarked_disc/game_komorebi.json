@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_komorebi",
+  "description": {
+    "translate": "music.game.komorebi"
+  },
+  "length_in_seconds": 287.64704166666667,
+  "comparator_output": 1
+}

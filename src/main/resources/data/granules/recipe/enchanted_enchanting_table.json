@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "granules:enchanted_tome",
+  "base": "minecraft:enchanting_table",
+  "result": {
+    "id": "granules:enchanted_enchanting_table"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ]
+}

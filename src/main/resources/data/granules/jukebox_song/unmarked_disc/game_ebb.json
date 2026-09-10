@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_ebb",
+  "description": {
+    "translate": "music.game.ebb"
+  },
+  "length_in_seconds": 306.48647916666664,
+  "comparator_output": 1
+}

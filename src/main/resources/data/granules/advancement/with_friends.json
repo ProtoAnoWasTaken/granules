@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:mover"
+    },
+    "title": {
+      "translate": "advancement.granules.with_friends.title"
+    },
+    "description": {
+      "translate": "advancement.granules.with_friends.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:people_mover",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "movers"
+    }
+  ]
+}

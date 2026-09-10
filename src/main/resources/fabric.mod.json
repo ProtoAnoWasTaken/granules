@@ -1,0 +1,50 @@
+{
+	"schemaVersion": 1,
+	"id": "granules",
+	"version": "${version}",
+	"name": "Granules",
+	"description": "A mod that adds a lot of little things",
+	"authors": [
+		"ProtoAno"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/granules"
+	},
+	"license": "LGPL-3.0-only",
+	"icon": "assets/granules/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.puppy.granules.GranulesMod"
+		],
+		"client": [
+			"com.puppy.granules.client.GranulesClient"
+		],
+		"modmenu": [
+			"com.puppy.granules.client.GranulesModMenu"
+		],
+		"jade": [
+			"com.puppy.granules.compat.DiscBurnerJadePlugin",
+			"com.puppy.granules.client.GranulesJadePlugin"
+		],
+		"rei_client": [
+			"com.puppy.granules.compat.GranulesReiPlugin"
+		],
+		"rei_common": [
+			"com.puppy.granules.compat.GranulesReiCommonPlugin"
+		]
+	},
+	"mixins": [
+		"granules.mixins.json",
+		{
+			"config": "granules.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

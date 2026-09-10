@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "granules:phantom_scale",
+    "granules:phantom_scale",
+    "granules:phantom_scale",
+    "granules:phantom_scale"
+  ],
+  "result": {
+    "id": "minecraft:phantom_membrane"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "lesser_items"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "granules:bread_crumbs",
+    "minecraft:fermented_spider_eye",
+    "minecraft:quartz"
+  ],
+  "result": {
+    "count": 2.0,
+    "id": "granules:ender_pearlet"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "lesser_items"
+    }
+  ]
+}

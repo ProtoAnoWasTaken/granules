@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_watcher",
+  "description": {
+    "translate": "music.game.watcher"
+  },
+  "length_in_seconds": 332.14666666666665,
+  "comparator_output": 1
+}

@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "granules:hard_hat"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "granules:hard_hat"
+      }
+    ]
+  }
+}

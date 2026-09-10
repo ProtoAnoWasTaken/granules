@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_subwoofer_lullaby",
+  "description": {
+    "translate": "music.game.subwoofer_lullaby"
+  },
+  "length_in_seconds": 209.1892290249433,
+  "comparator_output": 1
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_comforting_memories",
+  "description": {
+    "translate": "music.game.comforting_memories"
+  },
+  "length_in_seconds": 275.2,
+  "comparator_output": 1
+}

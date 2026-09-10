@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_nether_soulsand_valley_so_below",
+  "description": {
+    "translate": "music.game.nether.soulsand_valley.so_below"
+  },
+  "length_in_seconds": 318.82666666666665,
+  "comparator_output": 1
+}

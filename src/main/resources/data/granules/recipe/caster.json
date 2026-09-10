@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "minecraft:cobblestone",
+    "Q": "minecraft:quartz",
+    "R": "minecraft:redstone",
+    "E": "minecraft:ender_eye"
+  },
+  "pattern": [
+    "CQC",
+    "RER",
+    "CCC"
+  ],
+  "result": {
+    "id": "granules:caster"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ]
+}

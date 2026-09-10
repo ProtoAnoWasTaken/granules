@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_swamp_firebugs",
+  "description": {
+    "translate": "music.game.swamp.firebugs"
+  },
+  "length_in_seconds": 312.72,
+  "comparator_output": 1
+}

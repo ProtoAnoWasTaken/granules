@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "minecraft:cobblestone",
+    "H": "minecraft:heavy_core",
+    "I": "minecraft:iron_block"
+  },
+  "pattern": [
+    "CCC",
+    "IHI",
+    "CCC"
+  ],
+  "result": {
+    "id": "granules:mover"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "movers"
+    }
+  ]
+}

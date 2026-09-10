@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_end_the_end",
+  "description": {
+    "translate": "music.game.end.the_end"
+  },
+  "length_in_seconds": 904.5283219954648,
+  "comparator_output": 1
+}

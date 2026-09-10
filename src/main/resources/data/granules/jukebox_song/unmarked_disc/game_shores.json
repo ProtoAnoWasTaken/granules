@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_shores",
+  "description": {
+    "translate": "music.game.shores"
+  },
+  "length_in_seconds": 320.0,
+  "comparator_output": 1
+}

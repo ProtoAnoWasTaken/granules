@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_creative_aria_math",
+  "description": {
+    "translate": "music.game.creative.aria_math"
+  },
+  "length_in_seconds": 309.5,
+  "comparator_output": 1
+}

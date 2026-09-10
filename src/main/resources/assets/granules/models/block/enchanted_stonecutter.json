@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/stonecutter",
+  "textures": {
+    "particle": "granules:block/enchanted_stonecutter_side",
+    "bottom": "granules:block/enchanted_stonecutter_bottom",
+    "top": "granules:block/enchanted_stonecutter_top",
+    "side": "granules:block/enchanted_stonecutter_side",
+    "saw": "granules:block/enchanted_stonecutter_saw"
+  }
+}

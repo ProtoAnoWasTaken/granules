@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "granules:old_world_rose"
+          },
+          "weight": 24
+        },
+        {
+          "data": {
+            "Name": "granules:old_world_cyan_rose"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "slots": [
+    "mainhand"
+  ],
+  "min_cost": {
+    "per_level_above_first": 15,
+    "base": 15
+  },
+  "anvil_cost": 6,
+  "max_cost": {
+    "per_level_above_first": 15,
+    "base": 50
+  },
+  "description": {
+    "translate": "enchantment.granules.beheading"
+  },
+  "max_level": 3,
+  "weight": 2,
+  "exclusive_set": "#granules:exclusive_set/beheading",
+  "supported_items": "#granules:enchantable/axes"
+}

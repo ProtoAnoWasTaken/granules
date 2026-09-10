@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.menu_beginning_2",
+  "description": {
+    "translate": "music.menu.beginning_2"
+  },
+  "length_in_seconds": 182.6013605442177,
+  "comparator_output": 1
+}

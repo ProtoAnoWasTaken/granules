@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BFB",
+    "BBB"
+  ],
+  "key": {
+    "B": "minecraft:brick",
+    "F": "minecraft:flower_pot"
+  },
+  "result": {
+    "id": "granules:planter"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "slots": [
+    "feet"
+  ],
+  "min_cost": {
+    "per_level_above_first": 0,
+    "base": 20
+  },
+  "anvil_cost": 8,
+  "max_cost": {
+    "per_level_above_first": 0,
+    "base": 50
+  },
+  "description": {
+    "translate": "enchantment.granules.necrosoles"
+  },
+  "max_level": 1,
+  "weight": 1,
+  "exclusive_set": "#granules:exclusive_set/necrosoles",
+  "supported_items": "#minecraft:enchantable/foot_armor"
+}

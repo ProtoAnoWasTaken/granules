@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:pale_pelt"
+    },
+    "title": {
+      "translate": "advancement.granules.freak_on_a_leash.title"
+    },
+    "description": {
+      "translate": "advancement.granules.freak_on_a_leash.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:one_two_five",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "the_burrow"
+    }
+  ]
+}

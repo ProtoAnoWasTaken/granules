@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:blue_wool",
+    "minecraft:glow_ink_sac"
+  ],
+  "result": {
+    "id": "granules:glow_blue_wool"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "glow_wool"
+    }
+  ]
+}

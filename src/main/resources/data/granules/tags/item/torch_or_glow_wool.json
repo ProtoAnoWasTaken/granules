@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:torch",
+    "granules:glow_white_wool",
+    "granules:glow_orange_wool",
+    "granules:glow_magenta_wool",
+    "granules:glow_light_blue_wool",
+    "granules:glow_yellow_wool",
+    "granules:glow_lime_wool",
+    "granules:glow_pink_wool",
+    "granules:glow_gray_wool",
+    "granules:glow_light_gray_wool",
+    "granules:glow_cyan_wool",
+    "granules:glow_purple_wool",
+    "granules:glow_blue_wool",
+    "granules:glow_brown_wool",
+    "granules:glow_green_wool",
+    "granules:glow_red_wool",
+    "granules:glow_black_wool"
+  ]
+}

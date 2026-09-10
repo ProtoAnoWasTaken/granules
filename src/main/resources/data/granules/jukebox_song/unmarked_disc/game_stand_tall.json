@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_stand_tall",
+  "description": {
+    "translate": "music.game.stand_tall"
+  },
+  "length_in_seconds": 308.4,
+  "comparator_output": 1
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#minecraft:pickaxes",
+    "#minecraft:shovels",
+    "#minecraft:hoes",
+    "minecraft:shears",
+    "granules:opera_glove"
+  ],
+  "replace": false
+}

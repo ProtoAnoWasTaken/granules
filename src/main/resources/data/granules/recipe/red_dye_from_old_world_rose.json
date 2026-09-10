@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "granules:old_world_rose"
+  ],
+  "result": {
+    "count": 3.0,
+    "id": "minecraft:red_dye"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "old_world_items"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_featherfall",
+  "description": {
+    "translate": "music.game.featherfall"
+  },
+  "length_in_seconds": 344.08,
+  "comparator_output": 1
+}

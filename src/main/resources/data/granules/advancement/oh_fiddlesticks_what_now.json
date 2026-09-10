@@ -1,0 +1,862 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:arrow"
+    },
+    "title": {
+      "translate": "advancement.granules.oh_fiddlesticks_what_now.title"
+    },
+    "description": {
+      "translate": "advancement.granules.oh_fiddlesticks_what_now.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "stick_feather_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_feather_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_feather_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_feather_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_feather_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_feather_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_ghast": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_flint": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_quartz": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_echo": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_prismarine": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_coal": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_ghast": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:you_have_my_bow",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ],
+  "requirements": [
+    [
+      "stick_feather_quartz"
+    ],
+    [
+      "stick_feather_echo"
+    ],
+    [
+      "stick_feather_amethyst"
+    ],
+    [
+      "stick_feather_prismarine"
+    ],
+    [
+      "stick_feather_coal"
+    ],
+    [
+      "stick_feather_ghast"
+    ],
+    [
+      "stick_string_flint"
+    ],
+    [
+      "stick_string_quartz"
+    ],
+    [
+      "stick_string_echo"
+    ],
+    [
+      "stick_string_amethyst"
+    ],
+    [
+      "stick_string_prismarine"
+    ],
+    [
+      "stick_string_coal"
+    ],
+    [
+      "stick_string_ghast"
+    ],
+    [
+      "stick_firework_flint"
+    ],
+    [
+      "stick_firework_quartz"
+    ],
+    [
+      "stick_firework_echo"
+    ],
+    [
+      "stick_firework_amethyst"
+    ],
+    [
+      "stick_firework_prismarine"
+    ],
+    [
+      "stick_firework_coal"
+    ],
+    [
+      "stick_firework_ghast"
+    ],
+    [
+      "stick_name_tag_flint"
+    ],
+    [
+      "stick_name_tag_quartz"
+    ],
+    [
+      "stick_name_tag_echo"
+    ],
+    [
+      "stick_name_tag_amethyst"
+    ],
+    [
+      "stick_name_tag_prismarine"
+    ],
+    [
+      "stick_name_tag_coal"
+    ],
+    [
+      "stick_name_tag_ghast"
+    ],
+    [
+      "bone_feather_flint"
+    ],
+    [
+      "bone_feather_quartz"
+    ],
+    [
+      "bone_feather_echo"
+    ],
+    [
+      "bone_feather_amethyst"
+    ],
+    [
+      "bone_feather_prismarine"
+    ],
+    [
+      "bone_feather_coal"
+    ],
+    [
+      "bone_feather_ghast"
+    ],
+    [
+      "bone_string_flint"
+    ],
+    [
+      "bone_string_quartz"
+    ],
+    [
+      "bone_string_echo"
+    ],
+    [
+      "bone_string_amethyst"
+    ],
+    [
+      "bone_string_prismarine"
+    ],
+    [
+      "bone_string_coal"
+    ],
+    [
+      "bone_string_ghast"
+    ],
+    [
+      "bone_firework_flint"
+    ],
+    [
+      "bone_firework_quartz"
+    ],
+    [
+      "bone_firework_echo"
+    ],
+    [
+      "bone_firework_amethyst"
+    ],
+    [
+      "bone_firework_prismarine"
+    ],
+    [
+      "bone_firework_coal"
+    ],
+    [
+      "bone_firework_ghast"
+    ],
+    [
+      "bone_name_tag_flint"
+    ],
+    [
+      "bone_name_tag_quartz"
+    ],
+    [
+      "bone_name_tag_echo"
+    ],
+    [
+      "bone_name_tag_amethyst"
+    ],
+    [
+      "bone_name_tag_prismarine"
+    ],
+    [
+      "bone_name_tag_coal"
+    ],
+    [
+      "bone_name_tag_ghast"
+    ],
+    [
+      "end_rod_feather_flint"
+    ],
+    [
+      "end_rod_feather_quartz"
+    ],
+    [
+      "end_rod_feather_echo"
+    ],
+    [
+      "end_rod_feather_amethyst"
+    ],
+    [
+      "end_rod_feather_prismarine"
+    ],
+    [
+      "end_rod_feather_coal"
+    ],
+    [
+      "end_rod_feather_ghast"
+    ],
+    [
+      "end_rod_string_flint"
+    ],
+    [
+      "end_rod_string_quartz"
+    ],
+    [
+      "end_rod_string_echo"
+    ],
+    [
+      "end_rod_string_amethyst"
+    ],
+    [
+      "end_rod_string_prismarine"
+    ],
+    [
+      "end_rod_string_coal"
+    ],
+    [
+      "end_rod_string_ghast"
+    ],
+    [
+      "end_rod_firework_flint"
+    ],
+    [
+      "end_rod_firework_quartz"
+    ],
+    [
+      "end_rod_firework_echo"
+    ],
+    [
+      "end_rod_firework_amethyst"
+    ],
+    [
+      "end_rod_firework_prismarine"
+    ],
+    [
+      "end_rod_firework_coal"
+    ],
+    [
+      "end_rod_firework_ghast"
+    ],
+    [
+      "end_rod_name_tag_flint"
+    ],
+    [
+      "end_rod_name_tag_quartz"
+    ],
+    [
+      "end_rod_name_tag_echo"
+    ],
+    [
+      "end_rod_name_tag_amethyst"
+    ],
+    [
+      "end_rod_name_tag_prismarine"
+    ],
+    [
+      "end_rod_name_tag_coal"
+    ],
+    [
+      "end_rod_name_tag_ghast"
+    ],
+    [
+      "blaze_feather_flint"
+    ],
+    [
+      "blaze_feather_quartz"
+    ],
+    [
+      "blaze_feather_echo"
+    ],
+    [
+      "blaze_feather_amethyst"
+    ],
+    [
+      "blaze_feather_prismarine"
+    ],
+    [
+      "blaze_feather_coal"
+    ],
+    [
+      "blaze_feather_ghast"
+    ],
+    [
+      "blaze_string_flint"
+    ],
+    [
+      "blaze_string_quartz"
+    ],
+    [
+      "blaze_string_echo"
+    ],
+    [
+      "blaze_string_amethyst"
+    ],
+    [
+      "blaze_string_prismarine"
+    ],
+    [
+      "blaze_string_coal"
+    ],
+    [
+      "blaze_string_ghast"
+    ],
+    [
+      "blaze_firework_flint"
+    ],
+    [
+      "blaze_firework_quartz"
+    ],
+    [
+      "blaze_firework_echo"
+    ],
+    [
+      "blaze_firework_amethyst"
+    ],
+    [
+      "blaze_firework_prismarine"
+    ],
+    [
+      "blaze_firework_coal"
+    ],
+    [
+      "blaze_firework_ghast"
+    ],
+    [
+      "blaze_name_tag_flint"
+    ],
+    [
+      "blaze_name_tag_quartz"
+    ],
+    [
+      "blaze_name_tag_echo"
+    ],
+    [
+      "blaze_name_tag_amethyst"
+    ],
+    [
+      "blaze_name_tag_prismarine"
+    ],
+    [
+      "blaze_name_tag_coal"
+    ],
+    [
+      "blaze_name_tag_ghast"
+    ],
+    [
+      "breeze_feather_flint"
+    ],
+    [
+      "breeze_feather_quartz"
+    ],
+    [
+      "breeze_feather_echo"
+    ],
+    [
+      "breeze_feather_amethyst"
+    ],
+    [
+      "breeze_feather_prismarine"
+    ],
+    [
+      "breeze_feather_coal"
+    ],
+    [
+      "breeze_feather_ghast"
+    ],
+    [
+      "breeze_string_flint"
+    ],
+    [
+      "breeze_string_quartz"
+    ],
+    [
+      "breeze_string_echo"
+    ],
+    [
+      "breeze_string_amethyst"
+    ],
+    [
+      "breeze_string_prismarine"
+    ],
+    [
+      "breeze_string_coal"
+    ],
+    [
+      "breeze_string_ghast"
+    ],
+    [
+      "breeze_firework_flint"
+    ],
+    [
+      "breeze_firework_quartz"
+    ],
+    [
+      "breeze_firework_echo"
+    ],
+    [
+      "breeze_firework_amethyst"
+    ],
+    [
+      "breeze_firework_prismarine"
+    ],
+    [
+      "breeze_firework_coal"
+    ],
+    [
+      "breeze_firework_ghast"
+    ],
+    [
+      "breeze_name_tag_flint"
+    ],
+    [
+      "breeze_name_tag_quartz"
+    ],
+    [
+      "breeze_name_tag_echo"
+    ],
+    [
+      "breeze_name_tag_amethyst"
+    ],
+    [
+      "breeze_name_tag_prismarine"
+    ],
+    [
+      "breeze_name_tag_coal"
+    ],
+    [
+      "breeze_name_tag_ghast"
+    ]
+  ]
+}

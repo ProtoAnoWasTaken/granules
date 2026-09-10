@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_os_piano",
+  "description": {
+    "translate": "music.game.os_piano"
+  },
+  "length_in_seconds": 275.125,
+  "comparator_output": 1
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_memories",
+  "description": {
+    "translate": "music.game.memories"
+  },
+  "length_in_seconds": 245.294125,
+  "comparator_output": 1
+}

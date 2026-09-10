@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:pale_pelt"
+    },
+    "title": {
+      "translate": "advancement.granules.one_two_five.title"
+    },
+    "description": {
+      "translate": "advancement.granules.one_two_five.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:call_me_paquerette",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "the_burrow"
+    }
+  ]
+}

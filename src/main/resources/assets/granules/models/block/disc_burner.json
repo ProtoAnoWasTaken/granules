@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "granules:block/burner_top",
+    "side": "granules:block/burner_side",
+    "bottom": "minecraft:block/blackstone"
+  }
+}

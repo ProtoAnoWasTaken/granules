@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "primed=false": {
+      "model": "granules:block/rabbit_hole"
+    },
+    "primed=true": {
+      "model": "granules:block/rabbit_hole_primed"
+    }
+  }
+}

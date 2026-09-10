@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.menu_moog_city_2",
+  "description": {
+    "translate": "music.menu.moog_city_2"
+  },
+  "length_in_seconds": 183.64866213151927,
+  "comparator_output": 1
+}

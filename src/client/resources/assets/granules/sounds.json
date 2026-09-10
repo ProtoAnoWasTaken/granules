@@ -1,0 +1,836 @@
+{
+  "mover.moving": {
+    "subtitle": "subtitles.entity.granules.mover.moving",
+    "sounds": [
+      {
+        "name": "minecraft:entity.minecart.inside",
+        "type": "event"
+      }
+    ]
+  },
+  "mover.moving_underwater": {
+    "subtitle": "subtitles.entity.granules.mover.moving_underwater",
+    "sounds": [
+      {
+        "name": "minecraft:entity.minecart.inside.underwater",
+        "type": "event"
+      }
+    ]
+  },
+  "ender_radar.entered": {
+    "subtitle": "subtitles.item.granules.ender_radar.entered",
+    "sounds": [
+      {
+        "name": "granules:ender_radar.entered"
+      }
+    ]
+  },
+  "ender_radar.active": {
+    "subtitle": "subtitles.item.granules.ender_radar.active",
+    "sounds": [
+      {
+        "name": "granules:ender_radar.active"
+      }
+    ]
+  },
+  "hard_hat.block": {
+    "subtitle": "subtitles.item.granules.hard_hat.block",
+    "sounds": [
+      {
+        "name": "minecraft:item.shield.block",
+        "type": "event"
+      }
+    ]
+  },
+  "hard_hat.equip": {
+    "subtitle": "subtitles.item.granules.hard_hat.equip",
+    "sounds": [
+      {
+        "name": "minecraft:item.armor.equip_iron",
+        "type": "event"
+      }
+    ]
+  },
+  "unmarked_disc.game_a_familiar_room": {
+    "subtitle": "music.game.a_familiar_room",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/a_familiar_room",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_an_ordinary_day": {
+    "subtitle": "music.game.an_ordinary_day",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/an_ordinary_day",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_ancestry": {
+    "subtitle": "music.game.ancestry",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/ancestry",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_below_and_above": {
+    "subtitle": "music.game.below_and_above",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/below_and_above",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_broken_clocks": {
+    "subtitle": "music.game.broken_clocks",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/broken_clocks",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_bromeliad": {
+    "subtitle": "music.game.bromeliad",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/bromeliad",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_clark": {
+    "subtitle": "music.game.clark",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/clark",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_comforting_memories": {
+    "subtitle": "music.game.comforting_memories",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/comforting_memories",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_creative_aria_math": {
+    "subtitle": "music.game.creative.aria_math",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/aria_math",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_creative_biome_fest": {
+    "subtitle": "music.game.creative.biome_fest",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/biome_fest",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_creative_blind_spots": {
+    "subtitle": "music.game.creative.blind_spots",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/blind_spots",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_creative_dreiton": {
+    "subtitle": "music.game.creative.dreiton",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/dreiton",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_creative_haunt_muskie": {
+    "subtitle": "music.game.creative.haunt_muskie",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/haunt_muskie",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_creative_taswell": {
+    "subtitle": "music.game.creative.taswell",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/creative/taswell",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_crescent_dunes": {
+    "subtitle": "music.game.crescent_dunes",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/crescent_dunes",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_danny": {
+    "subtitle": "music.game.danny",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/danny",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_deeper": {
+    "subtitle": "music.game.deeper",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/deeper",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_dry_hands": {
+    "subtitle": "music.game.dry_hands",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/dry_hands",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_ebb": {
+    "subtitle": "music.game.ebb",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/ebb",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_echo_in_the_wind": {
+    "subtitle": "music.game.echo_in_the_wind",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/echo_in_the_wind",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_eld_unknown": {
+    "subtitle": "music.game.eld_unknown",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/eld_unknown",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_end_alpha": {
+    "subtitle": "music.game.end.alpha",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/end/alpha",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_end_boss": {
+    "subtitle": "music.game.end.boss",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/end/boss",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_end_the_end": {
+    "subtitle": "music.game.end.the_end",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/end/the_end",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_endless": {
+    "subtitle": "music.game.endless",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/endless",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_featherfall": {
+    "subtitle": "music.game.featherfall",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/featherfall",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_fireflies": {
+    "subtitle": "music.game.fireflies",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/fireflies",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_floating_dream": {
+    "subtitle": "music.game.floating_dream",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/floating_dream",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_haggstrom": {
+    "subtitle": "music.game.haggstrom",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/haggstrom",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_home": {
+    "subtitle": "music.game.home",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/home",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_infinite_amethyst": {
+    "subtitle": "music.game.infinite_amethyst",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/infinite_amethyst",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_key": {
+    "subtitle": "music.game.key",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/key",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_komorebi": {
+    "subtitle": "music.game.komorebi",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/komorebi",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_left_to_bloom": {
+    "subtitle": "music.game.left_to_bloom",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/left_to_bloom",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_lilypad": {
+    "subtitle": "music.game.lilypad",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/lilypad",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_living_mice": {
+    "subtitle": "music.game.living_mice",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/living_mice",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_memories": {
+    "subtitle": "music.game.memories",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/memories",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_mice_on_venus": {
+    "subtitle": "music.game.mice_on_venus",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/mice_on_venus",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_minecraft": {
+    "subtitle": "music.game.minecraft",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/minecraft",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nether_ballad_of_the_cats": {
+    "subtitle": "music.game.nether.ballad_of_the_cats",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nether/ballad_of_the_cats",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nether_concrete_halls": {
+    "subtitle": "music.game.nether.concrete_halls",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nether/concrete_halls",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nether_crimson_forest_chrysopoeia": {
+    "subtitle": "music.game.nether.crimson_forest.chrysopoeia",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nether/crimson_forest/chrysopoeia",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nether_dead_voxel": {
+    "subtitle": "music.game.nether.dead_voxel",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nether/dead_voxel",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nether_nether_wastes_rubedo": {
+    "subtitle": "music.game.nether.nether_wastes.rubedo",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nether/nether_wastes/rubedo",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nether_soulsand_valley_so_below": {
+    "subtitle": "music.game.nether.soulsand_valley.so_below",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nether/soulsand_valley/so_below",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nether_warmth": {
+    "subtitle": "music.game.nether.warmth",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nether/warmth",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_nightly": {
+    "subtitle": "music.game.nightly",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/nightly",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_one_more_day": {
+    "subtitle": "music.game.one_more_day",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/one_more_day",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_os_piano": {
+    "subtitle": "music.game.os_piano",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/os_piano",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_oxygene": {
+    "subtitle": "music.game.oxygene",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/oxygene",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_pokopoko": {
+    "subtitle": "music.game.pokopoko",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/pokopoko",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_puzzlebox": {
+    "subtitle": "music.game.puzzlebox",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/puzzlebox",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_shores": {
+    "subtitle": "music.game.shores",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/shores",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_stand_tall": {
+    "subtitle": "music.game.stand_tall",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/stand_tall",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_subwoofer_lullaby": {
+    "subtitle": "music.game.subwoofer_lullaby",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/subwoofer_lullaby",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_swamp_aerie": {
+    "subtitle": "music.game.swamp.aerie",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/swamp/aerie",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_swamp_firebugs": {
+    "subtitle": "music.game.swamp.firebugs",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/swamp/firebugs",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_swamp_labyrinthine": {
+    "subtitle": "music.game.swamp.labyrinthine",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/swamp/labyrinthine",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_sweden": {
+    "subtitle": "music.game.sweden",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/sweden",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_watcher": {
+    "subtitle": "music.game.watcher",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/watcher",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_water_axolotl": {
+    "subtitle": "music.game.water.axolotl",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/water/axolotl",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_water_dragon_fish": {
+    "subtitle": "music.game.water.dragon_fish",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/water/dragon_fish",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_water_shuniji": {
+    "subtitle": "music.game.water.shuniji",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/water/shuniji",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_wending": {
+    "subtitle": "music.game.wending",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/wending",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_wet_hands": {
+    "subtitle": "music.game.wet_hands",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/wet_hands",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.game_yakusoku": {
+    "subtitle": "music.game.yakusoku",
+    "sounds": [
+      {
+        "name": "minecraft:music/game/yakusoku",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.menu_beginning_2": {
+    "subtitle": "music.menu.beginning_2",
+    "sounds": [
+      {
+        "name": "minecraft:music/menu/beginning_2",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.menu_floating_trees": {
+    "subtitle": "music.menu.floating_trees",
+    "sounds": [
+      {
+        "name": "minecraft:music/menu/floating_trees",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.menu_moog_city_2": {
+    "subtitle": "music.menu.moog_city_2",
+    "sounds": [
+      {
+        "name": "minecraft:music/menu/moog_city_2",
+        "stream": true
+      }
+    ]
+  },
+  "unmarked_disc.menu_mutation": {
+    "subtitle": "music.menu.mutation",
+    "sounds": [
+      {
+        "name": "minecraft:music/menu/mutation",
+        "stream": true
+      }
+    ]
+  },
+  "music.the_burrow": {
+    "sounds": [
+      {
+        "name": "granules:music.eat_your_potatoes",
+        "type": "event"
+      },
+      {
+        "name": "granules:music.world_of_synthesis",
+        "type": "event"
+      },
+      {
+        "name": "granules:music.for_the_sake_of_making_games",
+        "type": "event"
+      },
+      {
+        "name": "granules:music.voyager",
+        "type": "event"
+      },
+      {
+        "name": "granules:music.lotus",
+        "type": "event"
+      }
+    ]
+  },
+  "rabbit_hole.scoop": {
+    "subtitle": "subtitles.block.granules.rabbit_hole.scoop",
+    "sounds": [
+      {
+        "name": "granules:rabbit_hole/scoop",
+        "attenuation_distance": 14
+      },
+      {
+        "name": "granules:rabbit_hole/scoop",
+        "attenuation_distance": 14,
+        "pitch": 0.9
+      },
+      {
+        "name": "granules:rabbit_hole/scoop",
+        "attenuation_distance": 14,
+        "pitch": 1.1
+      }
+    ]
+  },
+  "rabbit_hole.prime": {
+    "subtitle": "subtitles.block.granules.rabbit_hole.prime",
+    "sounds": [
+      "granules:rabbit_hole/prime"
+    ]
+  },
+  "rabbit_hole.enter": {
+    "subtitle": "subtitles.block.granules.rabbit_hole.enter",
+    "sounds": [
+      "granules:rabbit_hole/enter1",
+      "granules:rabbit_hole/enter2"
+    ]
+  },
+  "rabbit_hole.emerge": {
+    "subtitle": "subtitles.block.granules.rabbit_hole.emerge",
+    "sounds": [
+      "granules:rabbit_hole/emerge"
+    ]
+  },
+  "unmarked_disc.burrow_eat_your_potatoes": {
+    "subtitle": "music.granules.eat_your_potatoes",
+    "sounds": [
+      {
+        "name": "granules:music.eat_your_potatoes",
+        "type": "event"
+      }
+    ]
+  },
+  "unmarked_disc.burrow_world_of_synthesis": {
+    "subtitle": "music.granules.world_of_synthesis",
+    "sounds": [
+      {
+        "name": "granules:music.world_of_synthesis",
+        "type": "event"
+      }
+    ]
+  },
+  "unmarked_disc.burrow_for_the_sake_of_making_games": {
+    "subtitle": "music.granules.for_the_sake_of_making_games",
+    "sounds": [
+      {
+        "name": "granules:music.for_the_sake_of_making_games",
+        "type": "event"
+      }
+    ]
+  },
+  "unmarked_disc.burrow_voyager": {
+    "subtitle": "music.granules.voyager",
+    "sounds": [
+      {
+        "name": "granules:music.voyager",
+        "type": "event"
+      }
+    ]
+  },
+  "unmarked_disc.burrow_lotus": {
+    "subtitle": "music.granules.lotus",
+    "sounds": [
+      {
+        "name": "granules:music.lotus",
+        "type": "event"
+      }
+    ]
+  },
+  "music.eat_your_potatoes": {
+    "subtitle": "music.granules.eat_your_potatoes",
+    "sounds": [
+      {
+        "name": "granules:eatyourpotatoes",
+        "stream": true
+      }
+    ]
+  },
+  "music.world_of_synthesis": {
+    "subtitle": "music.granules.world_of_synthesis",
+    "sounds": [
+      {
+        "name": "granules:world_of_synthesis_promise_me",
+        "stream": true
+      }
+    ]
+  },
+  "music.for_the_sake_of_making_games": {
+    "subtitle": "music.granules.for_the_sake_of_making_games",
+    "sounds": [
+      {
+        "name": "granules:forthesakeofmakinggames",
+        "stream": true
+      }
+    ]
+  },
+  "music.voyager": {
+    "subtitle": "music.granules.voyager",
+    "sounds": [
+      {
+        "name": "granules:voyager",
+        "stream": true
+      }
+    ]
+  },
+  "music.lotus": {
+    "subtitle": "music.granules.lotus",
+    "sounds": [
+      {
+        "name": "granules:lotus",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "#granules:copper_torch_or_glow_wool",
+    "X": "minecraft:copper_nugget"
+  },
+  "pattern": [
+    "XXX",
+    "X#X",
+    "XXX"
+  ],
+  "result": {
+    "id": "minecraft:copper_lantern"
+  }
+}

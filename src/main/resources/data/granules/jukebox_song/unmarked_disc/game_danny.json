@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_danny",
+  "description": {
+    "translate": "music.game.danny"
+  },
+  "length_in_seconds": 255.26045351473923,
+  "comparator_output": 1
+}

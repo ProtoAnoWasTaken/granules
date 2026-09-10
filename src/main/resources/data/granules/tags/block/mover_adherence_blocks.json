@@ -1,0 +1,19 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:iron_block",
+		"minecraft:netherite_block",
+		"minecraft:lodestone",
+		"minecraft:ancient_debris",
+		"minecraft:smithing_table",
+		"minecraft:cauldron",
+		"minecraft:slime_block",
+		"minecraft:honey_block",
+		"minecraft:sticky_piston",
+		"minecraft:piston_head",
+		"minecraft:obsidian",
+		"minecraft:crying_obsidian",
+		"granules:junction",
+		"granules:mover"
+	]
+}

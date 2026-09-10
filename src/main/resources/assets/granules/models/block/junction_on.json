@@ -1,0 +1,7 @@
+{
+  "parent": "granules:block/junction",
+  "textures": {
+    "particle": "granules:block/junction_back_on",
+    "south": "granules:block/junction_back_on"
+  }
+}

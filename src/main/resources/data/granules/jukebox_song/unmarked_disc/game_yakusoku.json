@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_yakusoku",
+  "description": {
+    "translate": "music.game.yakusoku"
+  },
+  "length_in_seconds": 271.00533333333334,
+  "comparator_output": 1
+}

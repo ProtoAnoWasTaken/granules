@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:rabbit_hole"
+    },
+    "title": {
+      "translate": "advancement.granules.call_me_paquerette.title"
+    },
+    "description": {
+      "translate": "advancement.granules.call_me_paquerette.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true,
+    "background": "granules:gui/advancements/backgrounds/burrow"
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "the_burrow"
+    }
+  ]
+}

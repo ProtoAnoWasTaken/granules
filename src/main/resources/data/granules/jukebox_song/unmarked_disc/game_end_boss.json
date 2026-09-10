@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_end_boss",
+  "description": {
+    "translate": "music.game.end.boss"
+  },
+  "length_in_seconds": 344.15097505668933,
+  "comparator_output": 1
+}

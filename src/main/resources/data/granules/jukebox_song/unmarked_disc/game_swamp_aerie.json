@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_swamp_aerie",
+  "description": {
+    "translate": "music.game.swamp.aerie"
+  },
+  "length_in_seconds": 296.7866666666667,
+  "comparator_output": 1
+}

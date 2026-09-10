@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_nightly",
+  "description": {
+    "translate": "music.game.nightly"
+  },
+  "length_in_seconds": 302.14285416666667,
+  "comparator_output": 1
+}

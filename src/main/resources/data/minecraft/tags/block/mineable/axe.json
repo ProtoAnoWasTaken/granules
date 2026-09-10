@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "granules:pet_bed",
+    "granules:enchanted_smithing_table",
+    "granules:enchanted_crafting_table",
+    "granules:enchanted_fletching_table",
+    "granules:disc_burner"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "content": "empty"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron"
+      }
+    },
+    {
+      "when": {
+        "content": "water",
+        "level": "1|2|3"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_water_low"
+      }
+    },
+    {
+      "when": {
+        "content": "honey",
+        "level": "1|2|3"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_honey_low"
+      }
+    },
+    {
+      "when": {
+        "content": "honey",
+        "level": "4|5|6"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_honey_medium"
+      }
+    },
+    {
+      "when": {
+        "content": "honey",
+        "level": "7|8|9"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_honey_full"
+      }
+    },
+    {
+      "when": {
+        "content": "water",
+        "level": "4|5|6"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_water_medium"
+      }
+    },
+    {
+      "when": {
+        "content": "water",
+        "level": "7|8|9"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_water_full"
+      }
+    },
+    {
+      "when": {
+        "content": "lava",
+        "level": "1"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_lava_low"
+      }
+    },
+    {
+      "when": {
+        "content": "lava",
+        "level": "2"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_lava_medium"
+      }
+    },
+    {
+      "when": {
+        "content": "lava",
+        "level": "3"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_lava_full"
+      }
+    },
+    {
+      "when": {
+        "content": "powder_snow",
+        "level": "1|2|3"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_powder_snow_low"
+      }
+    },
+    {
+      "when": {
+        "content": "powder_snow",
+        "level": "4|5|6"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_powder_snow_medium"
+      }
+    },
+    {
+      "when": {
+        "content": "powder_snow",
+        "level": "7|8|9"
+      },
+      "apply": {
+        "model": "granules:block/enchanted_cauldron_powder_snow_full"
+      }
+    }
+  ]
+}

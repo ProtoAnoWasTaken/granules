@@ -1,0 +1,20 @@
+{
+  "slots": [
+    "mainhand"
+  ],
+  "min_cost": {
+    "per_level_above_first": 15,
+    "base": 20
+  },
+  "anvil_cost": 8,
+  "max_cost": {
+    "per_level_above_first": 15,
+    "base": 50
+  },
+  "description": {
+    "translate": "enchantment.granules.radius"
+  },
+  "max_level": 3,
+  "weight": 1,
+  "supported_items": "#granules:enchantable/excavators"
+}

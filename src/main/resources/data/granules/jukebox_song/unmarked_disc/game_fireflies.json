@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_fireflies",
+  "description": {
+    "translate": "music.game.fireflies"
+  },
+  "length_in_seconds": 155.54114583333333,
+  "comparator_output": 1
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "granules:enchanted_tome",
+  "base": "minecraft:grindstone",
+  "result": {
+    "id": "granules:enchanted_grindstone"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ]
+}

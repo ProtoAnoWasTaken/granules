@@ -1,0 +1,9 @@
+{
+  "parent": "granules:block/caster",
+  "textures": {
+    "particle": "granules:block/caster_front_on",
+    "north": "granules:block/caster_front_on",
+    "west": "granules:block/caster_side_on",
+    "east": "granules:block/caster_side_on"
+  }
+}

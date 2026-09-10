@@ -1,0 +1,40 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:wet_sponge"
+    },
+    "title": {
+      "translate": "advancement.granules.rock_bottom.title"
+    },
+    "description": {
+      "translate": "advancement.granules.rock_bottom.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "guardian_1": {
+      "trigger": "minecraft:impossible"
+    },
+    "guardian_2": {
+      "trigger": "minecraft:impossible"
+    },
+    "guardian_3": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:the_deep_end",
+  "requirements": [
+    [
+      "guardian_1"
+    ],
+    [
+      "guardian_2"
+    ],
+    [
+      "guardian_3"
+    ]
+  ]
+}

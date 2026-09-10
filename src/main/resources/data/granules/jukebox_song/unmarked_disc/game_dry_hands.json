@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_dry_hands",
+  "description": {
+    "translate": "music.game.dry_hands"
+  },
+  "length_in_seconds": 68.11616780045351,
+  "comparator_output": 1
+}

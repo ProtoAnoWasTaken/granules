@@ -1,0 +1,20 @@
+{
+  "slots": [
+    "armor"
+  ],
+  "min_cost": {
+    "per_level_above_first": 30,
+    "base": 25
+  },
+  "anvil_cost": 8,
+  "max_cost": {
+    "per_level_above_first": 30,
+    "base": 50
+  },
+  "description": {
+    "translate": "enchantment.granules.curse_of_combustion"
+  },
+  "max_level": 4,
+  "weight": 1,
+  "supported_items": "#minecraft:enchantable/armor"
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "honey_level=0": {
+      "model": "minecraft:block/cauldron"
+    },
+    "honey_level=1": {
+      "model": "granules:block/honey_cauldron_level1"
+    },
+    "honey_level=2": {
+      "model": "granules:block/honey_cauldron_level2"
+    },
+    "honey_level=3": {
+      "model": "granules:block/honey_cauldron_full"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "granules:the_burrow",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "granules:the_burrow"
+    },
+    "settings": "granules:the_burrow"
+  }
+}

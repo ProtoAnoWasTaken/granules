@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "granules:block/caster_front",
+    "down": "granules:block/caster_top",
+    "up": "granules:block/caster_top",
+    "north": "granules:block/caster_front",
+    "south": "granules:block/caster_back",
+    "west": "granules:block/caster_side",
+    "east": "granules:block/caster_side"
+  }
+}

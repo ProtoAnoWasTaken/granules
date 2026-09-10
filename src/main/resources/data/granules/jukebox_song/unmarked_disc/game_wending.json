@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_wending",
+  "description": {
+    "translate": "music.game.wending"
+  },
+  "length_in_seconds": 314.7383125,
+  "comparator_output": 1
+}

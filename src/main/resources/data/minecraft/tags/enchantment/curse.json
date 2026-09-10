@@ -1,0 +1,10 @@
+{
+  "values": [
+    "granules:curse_of_piercing",
+    "granules:curse_of_corrosion",
+    "granules:curse_of_combustion",
+    "granules:curse_of_crumpling",
+    "granules:curse_of_slack"
+  ],
+  "replace": false
+}

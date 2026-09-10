@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_nether_crimson_forest_chrysopoeia",
+  "description": {
+    "translate": "music.game.nether.crimson_forest.chrysopoeia"
+  },
+  "length_in_seconds": 303.424,
+  "comparator_output": 1
+}

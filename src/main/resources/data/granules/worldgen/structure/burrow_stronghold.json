@@ -1,0 +1,7 @@
+{
+  "type": "granules:burrow_stronghold",
+  "biomes": "granules:the_burrow",
+  "spawn_overrides": {},
+  "step": "underground_structures",
+  "terrain_adaptation": "bury"
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_an_ordinary_day",
+  "description": {
+    "translate": "music.game.an_ordinary_day"
+  },
+  "length_in_seconds": 331.36477083333335,
+  "comparator_output": 1
+}

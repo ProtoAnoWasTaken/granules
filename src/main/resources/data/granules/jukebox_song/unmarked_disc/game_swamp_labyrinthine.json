@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_swamp_labyrinthine",
+  "description": {
+    "translate": "music.game.swamp.labyrinthine"
+  },
+  "length_in_seconds": 324.6,
+  "comparator_output": 1
+}

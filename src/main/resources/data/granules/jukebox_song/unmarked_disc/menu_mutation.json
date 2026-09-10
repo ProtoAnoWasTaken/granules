@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.menu_mutation",
+  "description": {
+    "translate": "music.menu.mutation"
+  },
+  "length_in_seconds": 194.59462585034012,
+  "comparator_output": 1
+}

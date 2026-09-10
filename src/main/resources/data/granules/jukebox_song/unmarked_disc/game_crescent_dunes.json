@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_crescent_dunes",
+  "description": {
+    "translate": "music.game.crescent_dunes"
+  },
+  "length_in_seconds": 248.34635416666666,
+  "comparator_output": 1
+}

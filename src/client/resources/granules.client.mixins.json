@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "package": "com.puppy.granules.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "AbstractContainerScreenAccessor",
+    "AvatarRendererOperaGloveMixin",
+    "ItemInHandRendererOperaGloveMixin",
+    "KillerRabbitToastMixin",
+    "EnchantTableRendererMixin",
+    "EnchantTableRenderStateMixin",
+    "EditWorldScreenMixin",
+    "MerchantScreenMixin",
+    "SheepRendererMixin",
+    "SheepRenderStateMixin",
+    "SheepWoolLayerMixin",
+    "WorldCreationUiStateMixin",
+    "AdvancementTabMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

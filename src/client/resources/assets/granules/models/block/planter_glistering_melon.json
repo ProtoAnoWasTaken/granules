@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "granules:block/glisteringmelon_side",
+    "up": "granules:block/glisteringmelon_top",
+    "north": "granules:block/glisteringmelon_side",
+    "south": "granules:block/glisteringmelon_side",
+    "west": "granules:block/glisteringmelon_side",
+    "east": "granules:block/glisteringmelon_side",
+    "particle": "granules:block/glisteringmelon_side"
+  }
+}

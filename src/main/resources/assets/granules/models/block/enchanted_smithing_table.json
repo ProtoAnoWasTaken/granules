@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/smithing_table",
+  "textures": {
+    "particle": "granules:block/enchanted_smithing_table_front",
+    "down": "granules:block/enchanted_smithing_table_bottom",
+    "east": "granules:block/enchanted_smithing_table_side",
+    "north": "granules:block/enchanted_smithing_table_front",
+    "south": "granules:block/enchanted_smithing_table_front",
+    "up": "granules:block/enchanted_smithing_table_top",
+    "west": "granules:block/enchanted_smithing_table_side"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_nether_ballad_of_the_cats",
+  "description": {
+    "translate": "music.game.nether.ballad_of_the_cats"
+  },
+  "length_in_seconds": 280.0,
+  "comparator_output": 1
+}

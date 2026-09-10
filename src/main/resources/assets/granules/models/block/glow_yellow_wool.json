@@ -1,0 +1,7 @@
+{
+  "parent": "granules:block/template_glow_wool",
+  "textures": {
+    "wool": "granules:block/glow_yellow_wool",
+    "wool_emissive": "granules:block/glow_yellow_wool"
+  }
+}

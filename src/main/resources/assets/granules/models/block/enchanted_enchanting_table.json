@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/enchanting_table",
+  "textures": {
+    "particle": "granules:block/enchanted_enchanting_table_book",
+    "bottom": "granules:block/enchanted_enchanting_table_bottom",
+    "top": "granules:block/enchanted_enchanting_table_top",
+    "side": "granules:block/enchanted_enchanting_table_side"
+  }
+}

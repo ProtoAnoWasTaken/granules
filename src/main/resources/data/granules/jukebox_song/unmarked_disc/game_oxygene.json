@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_oxygene",
+  "description": {
+    "translate": "music.game.oxygene"
+  },
+  "length_in_seconds": 69.81818594104308,
+  "comparator_output": 1
+}

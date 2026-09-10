@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "C C",
+    "BQB",
+    "BCB"
+  ],
+  "key": {
+    "C": "minecraft:cobblestone",
+    "B": "minecraft:blackstone",
+    "Q": "minecraft:quartz"
+  },
+  "result": {
+    "id": "granules:disc_burner",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "unmarked_discs"
+    }
+  ]
+}

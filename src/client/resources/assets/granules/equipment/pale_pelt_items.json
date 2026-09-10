@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "granules:pale_pelt_items"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "granules:pale_pelt_items"
+      }
+    ]
+  }
+}

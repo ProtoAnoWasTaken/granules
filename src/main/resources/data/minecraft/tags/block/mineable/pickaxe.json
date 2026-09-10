@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "granules:enchanted_anvil",
+    "granules:enchanted_enchanting_table",
+    "granules:enchanted_stonecutter",
+    "granules:enchanted_grindstone",
+    "granules:enchanted_cauldron",
+    "granules:redstone_resistor",
+    "granules:caster",
+    "granules:philosopher",
+    "granules:mover",
+    "granules:junction"
+  ]
+}

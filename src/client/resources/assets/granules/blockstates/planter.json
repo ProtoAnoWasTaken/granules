@@ -1,0 +1,37 @@
+{
+  "variants": {
+    "soil=empty": {
+      "model": "granules:block/planter_empty"
+    },
+    "soil=dirt": {
+      "model": "granules:block/planter"
+    },
+    "soil=mud": {
+      "model": "granules:block/planter_mud"
+    },
+    "soil=farmland": {
+      "model": "granules:block/planter_farmland"
+    },
+    "soil=wet_farmland": {
+      "model": "granules:block/planter_farmland_wet"
+    },
+    "soil=grass": {
+      "model": "granules:block/planter_grass"
+    },
+    "soil=podzol": {
+      "model": "granules:block/planter_podzol"
+    },
+    "soil=sand": {
+      "model": "granules:block/planter_sand"
+    },
+    "soil=netherrack": {
+      "model": "granules:block/planter_netherrack"
+    },
+    "soil=soul_sand": {
+      "model": "granules:block/planter_soul_sand"
+    },
+    "soil=soul_soil": {
+      "model": "granules:block/planter_soul_soil"
+    }
+  }
+}

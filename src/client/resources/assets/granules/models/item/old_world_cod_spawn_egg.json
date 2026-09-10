@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "granules:item/old_world_cod_spawn_egg"
+  }
+}

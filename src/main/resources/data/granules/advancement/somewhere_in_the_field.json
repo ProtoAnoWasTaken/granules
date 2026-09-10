@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:ender_radar"
+    },
+    "title": {
+      "translate": "advancement.granules.somewhere_in_the_field.title"
+    },
+    "description": {
+      "translate": "advancement.granules.somewhere_in_the_field.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minecraft:story/follow_ender_eye",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "old_world_items"
+    }
+  ]
+}

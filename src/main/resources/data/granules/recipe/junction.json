@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:blackstone",
+    "I": "minecraft:iron_ingot",
+    "R": "minecraft:redstone_torch"
+  },
+  "pattern": [
+    "BBB",
+    "IRI",
+    "BBB"
+  ],
+  "result": {
+    "id": "granules:junction"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "movers"
+    }
+  ]
+}

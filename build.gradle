@@ -1,0 +1,426 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+	id 'maven-publish'
+}
+
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import java.awt.image.BufferedImage
+import javax.imageio.ImageIO
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = "granules-fabric-${project.minecraft_version}"
+}
+
+tasks.withType(AbstractArchiveTask).configureEach {
+	archiveVersion = "v${project.mod_version}"
+}
+
+repositories {
+	maven {
+		url = "https://maven.architectury.dev/"
+	}
+	maven {
+		url = "https://maven.terraformersmc.com/releases/"
+	}
+	maven {
+		url = "https://maven.shedaniel.me/"
+	}
+	maven {
+		url = "https://api.modrinth.com/maven"
+	}
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"granules" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	compileOnly "com.terraformersmc:modmenu:20.0.1"
+	compileOnly "me.shedaniel.cloth:cloth-config-fabric:26.2.155"
+	compileOnly "maven.modrinth:jade:26.2.11+fabric"
+	compileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:26.2.820"
+	compileOnly "dev.architectury:architectury-fabric:21.0.7"
+}
+
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "granules-tests"
+		enableGameTests = true
+		enableClientGameTests = false
+	}
+}
+
+dependencies {
+	gametestImplementation "maven.modrinth:jade:26.2.11+fabric"
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+	exclude("assets/modid/icon.png")
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+	def projectName = project.name
+	inputs.property "projectName", projectName
+
+	from("LICENSE") {
+		rename { "${it}_$projectName"}
+	}
+}
+
+publishing {
+	publications {
+		create("mavenJava", MavenPublication) {
+			from components.java
+		}
+	}
+
+	repositories {
+	}
+}
+
+def fletchersArrowResources = layout.buildDirectory.dir("generated/fletchers-arrow-resources")
+
+sourceSets.main.resources.srcDir(fletchersArrowResources)
+
+tasks.register("generateFletchersArrowResources") {
+	outputs.dir(fletchersArrowResources)
+
+	doLast {
+		def output = fletchersArrowResources.get().asFile
+		delete(output)
+		def shafts = [
+			[id: "stick", ingredient: "minecraft:stick", texture: "arrow_shaft_stick"],
+			[id: "bone", ingredient: "minecraft:bone", texture: "arrow_shaft_bone"],
+			[id: "end_rod", ingredient: "minecraft:end_rod", texture: "arrow_shaft_endrod"],
+			[id: "blaze", ingredient: "minecraft:blaze_rod", texture: "arrow_shaft_blaze"],
+			[id: "breeze", ingredient: "minecraft:breeze_rod", texture: "arrow_shaft_breeze"]
+		]
+		def fletches = [
+			[id: "feather", ingredient: "minecraft:feather", texture: "arrow_fletch_feather"],
+			[id: "string", ingredient: "minecraft:string", texture: "arrow_fletch_string"],
+			[id: "firework", ingredient: "minecraft:firework_rocket", texture: "arrow_fletch_firework"],
+			[id: "name_tag", ingredient: "minecraft:name_tag", texture: "arrow_fletch_nametag"]
+		]
+		def heads = [
+			[id: "flint", ingredient: "minecraft:flint", itemTexture: "arrow_head_flint"],
+			[id: "quartz", ingredient: "minecraft:quartz", itemTexture: "arrow_head_quartz", entityTexture: "arrow_quartz_head"],
+			[id: "echo", ingredient: "minecraft:echo_shard", itemTexture: "arrow_head_echo", entityTexture: "arrow_head_echo"],
+			[id: "amethyst", ingredient: "minecraft:amethyst_shard", itemTexture: "arrow_head_amethyst", entityTexture: "arrow_head_amethyst"],
+			[id: "prismarine", ingredient: "minecraft:prismarine_shard", itemTexture: "arrow_head_prismarine", entityTexture: "arrow_head_prismarine"],
+			[id: "coal", ingredient: "minecraft:coal", itemTexture: "arrow_head_coal", entityTexture: "arrow_head_coal"],
+			[id: "ghast", ingredient: "minecraft:ghast_tear", itemTexture: "arrow_head_ghast", entityTexture: "arrow_head_ghast"]
+		]
+		def modelCases = []
+		shafts.each { shaft ->
+			fletches.each { fletch ->
+				heads.each { head ->
+					if (shaft.id == "stick" && fletch.id == "feather" && head.id == "flint") {
+						return
+					}
+					def itemId = "fletchers_arrow_${shaft.id}_${fletch.id}_${head.id}"
+					def itemModel = [
+						parent: "minecraft:item/generated",
+						textures: [
+							layer0: "granules:item/${shaft.texture}",
+							layer1: "granules:item/${fletch.texture}",
+							layer2: "granules:item/${head.itemTexture}"
+						]
+					]
+					def modelFile = new File(output, "assets/granules/models/item/${itemId}.json")
+					modelCases.add([when: "${shaft.id}_${fletch.id}_${head.id}", model: [type: "minecraft:model", model: "granules:item/${itemId}"]])
+					modelFile.parentFile.mkdirs()
+					modelFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(itemModel))
+					if (head.id == "echo") {
+						def sourceDirectory = new File(project.projectDir, "src/main/resources/assets/granules/textures/entity/projectiles")
+						def sourceTextures = [shaft.texture, fletch.texture, head.entityTexture]
+						BufferedImage composite = null
+						sourceTextures.each { texture ->
+							def sourceFile = new File(sourceDirectory, "${texture}.png")
+							if (!sourceFile.isFile()) {
+								throw new GradleException("Missing Fletcher's Arrow entity texture: ${sourceFile}")
+							}
+							BufferedImage source = ImageIO.read(sourceFile)
+							if (composite == null) {
+								composite = new BufferedImage(source.width, source.height, BufferedImage.TYPE_INT_ARGB)
+							}
+							def graphics = composite.createGraphics()
+							graphics.drawImage(source, 0, 0, null)
+							graphics.dispose()
+						}
+						for (int y = 0; y < composite.height; y++) {
+							for (int x = 0; x < composite.width; x++) {
+								int pixel = composite.getRGB(x, y)
+								int alpha = (pixel >>> 24) & 255
+								int red = (pixel >>> 16) & 255
+								int green = (pixel >>> 8) & 255
+								int blue = pixel & 255
+								int tintedAlpha = Math.round(alpha * 0.5F)
+								int tintedRed = red * 150 / 255
+								int tintedGreen = green * 217 / 255
+								int tintedBlue = blue
+								composite.setRGB(x, y, (tintedAlpha << 24) | (tintedRed << 16) | (tintedGreen << 8) | tintedBlue)
+							}
+						}
+						def phantomFile = new File(output, "assets/granules/textures/entity/projectiles/echo_fletchers_arrow_${shaft.id}_${fletch.id}_${head.id}.png")
+						phantomFile.parentFile.mkdirs()
+						ImageIO.write(composite, "png", phantomFile)
+					}
+				}
+			}
+		}
+		def itemDefinition = [
+			model: [
+				type: "minecraft:select",
+				property: "minecraft:custom_model_data",
+				index: 0,
+				cases: modelCases,
+				fallback: [type: "minecraft:model", model: "minecraft:item/arrow"]
+			]
+		]
+		def definitionFile = new File(output, "assets/granules/items/fletchers_arrow.json")
+		definitionFile.parentFile.mkdirs()
+		definitionFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(itemDefinition))
+		def petBedWoods = [
+			"oak_log",
+			"stripped_oak_log",
+			"spruce_log",
+			"stripped_spruce_log",
+			"birch_log",
+			"stripped_birch_log",
+			"jungle_log",
+			"stripped_jungle_log",
+			"acacia_log",
+			"stripped_acacia_log",
+			"dark_oak_log",
+			"stripped_dark_oak_log",
+			"mangrove_log",
+			"stripped_mangrove_log",
+			"cherry_log",
+			"stripped_cherry_log",
+			"pale_oak_log",
+			"stripped_pale_oak_log",
+			"crimson_stem",
+			"stripped_crimson_stem",
+			"warped_stem",
+			"stripped_warped_stem",
+			"bamboo_block",
+			"stripped_bamboo_block"
+		]
+		def petBedWools = [
+			"white",
+			"orange",
+			"magenta",
+			"light_blue",
+			"yellow",
+			"lime",
+			"pink",
+			"gray",
+			"light_gray",
+			"cyan",
+			"purple",
+			"blue",
+			"brown",
+			"green",
+			"red",
+			"black"
+		]
+		def petBedTextureDirectory = new File(project.projectDir, "build-inputs/pet-bed/materials")
+		def petBedAssetDirectory = new File(project.projectDir, "build-inputs/pet-bed")
+		def petBedWoodMask = ImageIO.read(new File(petBedAssetDirectory, "textures/item/pet_bed_wood.png"))
+		def petBedWoolMask = ImageIO.read(new File(petBedAssetDirectory, "textures/item/pet_bed_wool.png"))
+		def petBedTemplate = new JsonSlurper().parse(new File(petBedAssetDirectory, "models/block/petbed.json"))
+		def petBedPalette = { File sourceFile ->
+			if (!sourceFile.isFile()) {
+				throw new GradleException("Missing Pet Bed material texture: ${sourceFile}")
+			}
+			BufferedImage source = ImageIO.read(sourceFile)
+			def colors = []
+			for (int y = 0; y < source.height; y++) {
+				for (int x = 0; x < source.width; x++) {
+					int color = source.getRGB(x, y)
+					if (((color >>> 24) & 255) > 0) {
+						colors.add(color)
+					}
+				}
+			}
+			colors.sort { first, second ->
+				int firstBrightness = ((first >>> 16) & 255) * 2126 + ((first >>> 8) & 255) * 7152 + (first & 255) * 722
+				int secondBrightness = ((second >>> 16) & 255) * 2126 + ((second >>> 8) & 255) * 7152 + (second & 255) * 722
+				firstBrightness <=> secondBrightness
+			}
+			return [
+				colors.get(0),
+				colors.get((int) Math.floor((colors.size() - 1) * 0.25D)),
+				colors.get((int) Math.floor((colors.size() - 1) * 0.75D)),
+				colors.get(colors.size() - 1)
+			]
+		}
+		def petBedRecolor = { BufferedImage mask, List<Integer> palette, File destination ->
+			BufferedImage recolored = new BufferedImage(mask.width, mask.height, BufferedImage.TYPE_INT_ARGB)
+			for (int y = 0; y < mask.height; y++) {
+				for (int x = 0; x < mask.width; x++) {
+					int maskColor = mask.getRGB(x, y)
+					int alpha = (maskColor >>> 24) & 255
+					if (alpha == 0) {
+						recolored.setRGB(x, y, 0)
+						continue
+					}
+					int brightness = (maskColor >>> 16) & 255
+					int paletteIndex = brightness < 32 ? 0 : brightness < 128 ? 1 : brightness < 224 ? 2 : 3
+					int materialColor = palette.get(paletteIndex)
+					recolored.setRGB(x, y, (alpha << 24) | (materialColor & 0x00FFFFFF))
+				}
+			}
+			destination.parentFile.mkdirs()
+			ImageIO.write(recolored, "png", destination)
+		}
+		petBedWoods.each { wood ->
+			def source = new File(petBedTextureDirectory, "${wood}.png")
+			petBedRecolor(
+				petBedWoodMask,
+				petBedPalette(source),
+				new File(output, "assets/granules/textures/item/pet_bed_wood_${wood}.png")
+			)
+		}
+		petBedWools.each { wool ->
+			def source = new File(petBedTextureDirectory, "${wool}_wool.png")
+			petBedRecolor(
+				petBedWoolMask,
+				petBedPalette(source),
+				new File(output, "assets/granules/textures/item/pet_bed_wool_${wool}.png")
+			)
+		}
+		def petBedBlockParts = []
+		def petBedItemCases = []
+		def petBedRotations = [north: 0, east: 90, south: 180, west: 270]
+		petBedWoods.each { wood ->
+			petBedWools.each { wool ->
+				def modelId = "pet_bed_${wood}_${wool}"
+				def blockModel = new JsonSlurper().parseText(JsonOutput.toJson(petBedTemplate))
+				blockModel.textures["2"] = "minecraft:block/${wood}"
+				blockModel.textures["3"] = "minecraft:block/${wool}_wool"
+				blockModel.textures.particle = "minecraft:block/${wool}_wool"
+				def blockModelFile = new File(output, "assets/granules/models/block/${modelId}.json")
+				blockModelFile.parentFile.mkdirs()
+				blockModelFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(blockModel))
+				def itemModel = [
+					parent: "minecraft:item/generated",
+					textures: [
+						layer0: "granules:item/pet_bed_wood_${wood}",
+						layer1: "granules:item/pet_bed_wool_${wool}"
+					]
+				]
+				def itemModelFile = new File(output, "assets/granules/models/item/${modelId}.json")
+				itemModelFile.parentFile.mkdirs()
+				itemModelFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(itemModel))
+				petBedItemCases.add([when: "${wood}_${wool}", model: [type: "minecraft:model", model: "granules:item/${modelId}"]])
+				petBedRotations.each { facing, rotation ->
+					def apply = [model: "granules:block/${modelId}"]
+					if (rotation != 0) {
+						apply.y = rotation
+					}
+					petBedBlockParts.add([when: [facing: facing, wood: wood, wool: wool], apply: apply])
+				}
+			}
+		}
+		def petBedBlockState = [multipart: petBedBlockParts]
+		def petBedBlockStateFile = new File(output, "assets/granules/blockstates/pet_bed.json")
+		petBedBlockStateFile.parentFile.mkdirs()
+		petBedBlockStateFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(petBedBlockState))
+		def petBedItemDefinition = [
+			model: [
+				type: "minecraft:select",
+				property: "minecraft:custom_model_data",
+				index: 0,
+				cases: petBedItemCases,
+				fallback: [type: "minecraft:model", model: "granules:item/pet_bed_oak_log_white"]
+			]
+		]
+		def petBedItemDefinitionFile = new File(output, "assets/granules/items/pet_bed.json")
+		petBedItemDefinitionFile.parentFile.mkdirs()
+		petBedItemDefinitionFile.text = JsonOutput.prettyPrint(JsonOutput.toJson(petBedItemDefinition))
+	}
+}
+
+processResources.dependsOn(tasks.named("generateFletchersArrowResources"))
+
+def discResources = layout.buildDirectory.dir("generated/disc-resources")
+sourceSets.main.resources.srcDir(discResources)
+
+tasks.register("generateDiscResources") {
+	def textureDirectory = file("src/main/resources/assets/granules/textures")
+	inputs.file(new File(textureDirectory, "item/unmarkeddisc_hub.png"))
+	inputs.file(new File(textureDirectory, "colormap/unmarked_disc.png"))
+	outputs.dir(discResources)
+	doLast {
+		def output = discResources.get().asFile
+		def hub = ImageIO.read(new File(textureDirectory, "item/unmarkeddisc_hub.png"))
+		def layers = [bright: 0xFFFFFF, medium: 0x808080, dark: 0x000000]
+		layers.each { name, shade ->
+			def mask = new BufferedImage(hub.width, hub.height, BufferedImage.TYPE_INT_ARGB)
+			for (int y = 0; y < hub.height; y++) {
+				for (int x = 0; x < hub.width; x++) {
+					int pixel = hub.getRGB(x, y)
+					if ((pixel >>> 24) != 0 && (pixel & 0xFFFFFF) == shade) {
+						mask.setRGB(x, y, (int)((pixel & 0xFF000000) | 0xFFFFFF))
+					}
+				}
+			}
+			def destination = new File(output, "assets/granules/textures/item/unmarkeddisc_hub_${name}.png")
+			destination.parentFile.mkdirs()
+			ImageIO.write(mask, "png", destination)
+		}
+		def palette = ImageIO.read(new File(textureDirectory, "colormap/unmarked_disc.png"))
+		def paletteFile = new File(output, "data/granules/disc_palette.bin")
+		paletteFile.parentFile.mkdirs()
+		paletteFile.withDataOutputStream { stream ->
+			stream.writeInt(palette.width)
+			stream.writeInt(palette.height)
+			for (int y = 0; y < palette.height; y++) {
+				for (int x = 0; x < palette.width; x++) {
+					stream.writeInt(palette.getRGB(x, y) & 0xFFFFFF)
+				}
+			}
+		}
+	}
+}
+
+processResources.dependsOn(tasks.named("generateDiscResources"))
+tasks.named("sourcesJar").configure {
+	dependsOn(tasks.named("generateDiscResources"))
+}
+tasks.named("sourcesJar").configure {
+	dependsOn(tasks.named("generateFletchersArrowResources"))
+}

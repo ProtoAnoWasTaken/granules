@@ -1,0 +1,7 @@
+{
+  "values": [
+    "minecraft:bow",
+    "#minecraft:enchantable/fishing"
+  ],
+  "replace": false
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.menu_floating_trees",
+  "description": {
+    "translate": "music.menu.floating_trees"
+  },
+  "length_in_seconds": 244.75,
+  "comparator_output": 1
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_bromeliad",
+  "description": {
+    "translate": "music.game.bromeliad"
+  },
+  "length_in_seconds": 312.2789375,
+  "comparator_output": 1
+}

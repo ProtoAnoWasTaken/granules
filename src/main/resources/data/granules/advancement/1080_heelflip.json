@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:bread_heels"
+    },
+    "title": {
+      "translate": "advancement.granules.1080_heelflip.title"
+    },
+    "description": {
+      "translate": "advancement.granules.1080_heelflip.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:baking_bread",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "lesser_items"
+    }
+  ]
+}

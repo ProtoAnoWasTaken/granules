@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_broken_clocks",
+  "description": {
+    "translate": "music.game.broken_clocks"
+  },
+  "length_in_seconds": 213.75,
+  "comparator_output": 1
+}

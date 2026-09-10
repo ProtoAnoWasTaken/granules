@@ -1,0 +1,6 @@
+{
+  "parent": "granules:block/planter",
+  "textures": {
+    "soil": "granules:block/planter_soil_empty"
+  }
+}

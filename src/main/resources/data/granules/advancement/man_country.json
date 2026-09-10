@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:bread_crumbs"
+    },
+    "title": {
+      "translate": "advancement.granules.man_country.title"
+    },
+    "description": {
+      "translate": "advancement.granules.man_country.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "granules:crummy_deal",
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "lesser_items"
+    }
+  ]
+}

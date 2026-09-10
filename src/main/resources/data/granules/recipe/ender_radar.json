@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": "minecraft:compass",
+    "E": "minecraft:ender_eye",
+    "I": "minecraft:iron_ingot",
+    "e": "minecraft:echo_shard"
+  },
+  "pattern": [
+    "  e",
+    "IEC",
+    "III"
+  ],
+  "result": {
+    "id": "granules:ender_radar"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "old_world_items"
+    }
+  ]
+}

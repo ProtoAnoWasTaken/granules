@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/birch_planks",
+    "east": "granules:block/enchanted_fletching_table_side",
+    "north": "granules:block/enchanted_fletching_table_front",
+    "particle": "granules:block/enchanted_fletching_table_front",
+    "south": "granules:block/enchanted_fletching_table_front",
+    "up": "granules:block/enchanted_fletching_table_top",
+    "west": "granules:block/enchanted_fletching_table_side"
+  }
+}

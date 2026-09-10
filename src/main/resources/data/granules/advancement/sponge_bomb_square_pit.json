@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:dry_bomb"
+    },
+    "title": {
+      "translate": "advancement.granules.sponge_bomb_square_pit.title"
+    },
+    "description": {
+      "translate": "advancement.granules.sponge_bomb_square_pit.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "minecraft:adventure/root"
+}

@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_ancestry",
+  "description": {
+    "translate": "music.game.ancestry"
+  },
+  "length_in_seconds": 343.50666666666666,
+  "comparator_output": 1
+}

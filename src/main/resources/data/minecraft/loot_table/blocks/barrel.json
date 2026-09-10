@@ -1,0 +1,71 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "minecraft:barrel",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "sealed": "true"
+                  }
+                }
+              ],
+              "functions": [
+                {
+                  "function": "minecraft:copy_components",
+                  "include": [
+                    "minecraft:custom_name",
+                    "minecraft:container",
+                    "minecraft:lock",
+                    "minecraft:container_loot"
+                  ],
+                  "source": "block_entity"
+                },
+                {
+                  "components": {
+                    "minecraft:custom_data": {
+                      "granules_sealed": true
+                    },
+                    "minecraft:item_model": "granules:sealed_barrel",
+                    "minecraft:item_name": {
+                      "translate": "block.granules.sealed_barrel"
+                    }
+                  },
+                  "function": "minecraft:set_components"
+                }
+              ],
+              "name": "minecraft:barrel"
+            },
+            {
+              "type": "minecraft:item",
+              "functions": [
+                {
+                  "function": "minecraft:copy_components",
+                  "include": [
+                    "minecraft:custom_name"
+                  ],
+                  "source": "block_entity"
+                }
+              ],
+              "name": "minecraft:barrel"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minecraft:blocks/barrel"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "#granules:glow_wool",
+    "minecraft:orange_dye"
+  ],
+  "result": {
+    "id": "granules:glow_orange_wool"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "glow_wool"
+    }
+  ]
+}

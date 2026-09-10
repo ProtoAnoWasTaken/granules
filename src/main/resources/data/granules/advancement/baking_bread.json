@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:bread"
+    },
+    "title": {
+      "translate": "advancement.granules.baking_bread.title"
+    },
+    "description": {
+      "translate": "advancement.granules.baking_bread.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "minecraft:bread"
+      }
+    }
+  },
+  "parent": "minecraft:husbandry/root"
+}

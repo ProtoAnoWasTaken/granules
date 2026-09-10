@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/grindstone",
+  "textures": {
+    "particle": "granules:block/enchanted_grindstone_side",
+    "pivot": "granules:block/enchanted_grindstone_pivot",
+    "round": "granules:block/enchanted_grindstone_round",
+    "side": "granules:block/enchanted_grindstone_side",
+    "leg": "granules:block/enchanted_dark_oak_log"
+  }
+}

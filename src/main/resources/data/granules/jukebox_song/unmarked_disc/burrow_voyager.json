@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.burrow_voyager",
+  "description": {
+    "translate": "music.granules.voyager"
+  },
+  "length_in_seconds": 262.110567,
+  "comparator_output": 1
+}

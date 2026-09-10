@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "T": "minecraft:tuff",
+    "L": "minecraft:lapis_lazuli",
+    "G": "minecraft:gold_ingot",
+    "O": "minecraft:observer"
+  },
+  "pattern": [
+    "TLT",
+    "GOG",
+    "TTT"
+  ],
+  "result": {
+    "id": "granules:philosopher"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "enhanced_workstations"
+    }
+  ]
+}

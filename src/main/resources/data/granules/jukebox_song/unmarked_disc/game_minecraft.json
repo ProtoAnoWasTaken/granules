@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_minecraft",
+  "description": {
+    "translate": "music.game.minecraft"
+  },
+  "length_in_seconds": 260.54448979591837,
+  "comparator_output": 1
+}

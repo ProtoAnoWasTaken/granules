@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_puzzlebox",
+  "description": {
+    "translate": "music.game.puzzlebox"
+  },
+  "length_in_seconds": 299.62666666666667,
+  "comparator_output": 1
+}

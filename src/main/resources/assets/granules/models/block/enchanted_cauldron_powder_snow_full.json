@@ -1,0 +1,6 @@
+{
+  "parent": "granules:block/enchanted_cauldron_fluid_full",
+  "textures": {
+    "content": "minecraft:block/powder_snow"
+  }
+}

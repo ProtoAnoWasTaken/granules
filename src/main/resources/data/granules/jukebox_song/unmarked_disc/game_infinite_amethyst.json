@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_infinite_amethyst",
+  "description": {
+    "translate": "music.game.infinite_amethyst"
+  },
+  "length_in_seconds": 271.7866666666667,
+  "comparator_output": 1
+}

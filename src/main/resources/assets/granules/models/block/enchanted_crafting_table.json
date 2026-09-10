@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "granules:block/enchanted_crafting_table_front",
+    "down": "granules:block/enchanted_oak_planks",
+    "east": "granules:block/enchanted_crafting_table_side",
+    "north": "granules:block/enchanted_crafting_table_front",
+    "south": "granules:block/enchanted_crafting_table_side",
+    "up": "granules:block/enchanted_crafting_table_top",
+    "west": "granules:block/enchanted_crafting_table_front"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 13730629,
+    "separation": 32,
+    "spacing": 96
+  },
+  "structures": [
+    {
+      "structure": "granules:burrow_ancient_city",
+      "weight": 1
+    }
+  ]
+}

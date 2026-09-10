@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.burrow_eat_your_potatoes",
+  "description": {
+    "translate": "music.granules.eat_your_potatoes"
+  },
+  "length_in_seconds": 192.677891,
+  "comparator_output": 1
+}

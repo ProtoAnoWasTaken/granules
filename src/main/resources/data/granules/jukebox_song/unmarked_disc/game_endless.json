@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_endless",
+  "description": {
+    "translate": "music.game.endless"
+  },
+  "length_in_seconds": 402.14666666666665,
+  "comparator_output": 1
+}

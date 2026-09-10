@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "granules:block/mover"
+    }
+  }
+}

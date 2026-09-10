@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_below_and_above",
+  "description": {
+    "translate": "music.game.below_and_above"
+  },
+  "length_in_seconds": 212.375,
+  "comparator_output": 1
+}

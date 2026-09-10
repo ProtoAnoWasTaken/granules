@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#minecraft:replaceable",
+    "#minecraft:wool_carpets",
+    "minecraft:moss_carpet",
+    "minecraft:pale_moss_carpet",
+    "#minecraft:wooden_shelves",
+    "#minecraft:chains",
+    "#minecraft:rails",
+    "#minecraft:banners",
+    "#minecraft:pressure_plates"
+  ]
+}

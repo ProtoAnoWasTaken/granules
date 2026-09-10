@@ -1,0 +1,8 @@
+{
+  "sound_event": "granules:unmarked_disc.game_pokopoko",
+  "description": {
+    "translate": "music.game.pokopoko"
+  },
+  "length_in_seconds": 304.5543125,
+  "comparator_output": 1
+}

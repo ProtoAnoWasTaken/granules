@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " Q ",
+    "QGQ",
+    " Q "
+  ],
+  "key": {
+    "Q": "minecraft:quartz",
+    "G": "minecraft:glass_pane"
+  },
+  "result": {
+    "id": "granules:unmarked_disc",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "unmarked_discs"
+    }
+  ]
+}
