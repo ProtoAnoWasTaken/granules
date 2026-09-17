@@ -32,7 +32,7 @@ public class SomnosatchelItem extends Item {
 		}
 		if (!context.getLevel().isClientSide() && context.getPlayer() instanceof ServerPlayer player) {
 			setLinked(context.getItemInHand());
-			GranulesAdvancements.award(player, "remote_access_bundle");
+			GranulesAdvancements.recordSomnosatchelLink(player);
 			player.sendSystemMessage(Component.translatable("item.granules.somnosatchel.linked"), true);
 		}
 		return InteractionResult.SUCCESS;

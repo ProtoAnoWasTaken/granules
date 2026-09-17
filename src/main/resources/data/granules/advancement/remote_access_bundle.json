@@ -17,6 +17,15 @@
   "criteria": {
     "triggered": {
       "trigger": "minecraft:impossible"
+    },
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:somnosatchel"
+      }
+    },
+    "linked": {
+      "trigger": "minecraft:impossible"
     }
   },
   "parent": "minecraft:end/find_end_city",
@@ -25,5 +34,15 @@
       "condition": "granules:content_enabled",
       "category": "lesser_items"
     }
+  ],
+  "requirements": [
+    [
+      "triggered",
+      "crafted"
+    ],
+    [
+      "triggered",
+      "linked"
+    ]
   ]
 }

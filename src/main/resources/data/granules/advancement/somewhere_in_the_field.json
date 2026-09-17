@@ -1,7 +1,14 @@
 {
   "display": {
     "icon": {
-      "id": "granules:ender_radar"
+      "id": "granules:ender_radar",
+      "components": {
+        "minecraft:custom_model_data": {
+          "strings": [
+            "on"
+          ]
+        }
+      }
     },
     "title": {
       "translate": "advancement.granules.somewhere_in_the_field.title"

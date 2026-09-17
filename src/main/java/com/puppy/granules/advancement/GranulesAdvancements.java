@@ -14,6 +14,8 @@ import net.minecraft.world.clock.WorldClocks;
 import com.puppy.granules.rabbit.KillerRabbitAccess;
 
 import java.util.Set;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import com.puppy.granules.fletching.ArrowParts;
 
 public final class GranulesAdvancements {
 	private static final String JOIN_DAY_PREFIX = "granules_join_day_";
@@ -30,14 +32,33 @@ public final class GranulesAdvancements {
 			rememberJoinDay(handler.getPlayer());
 			restoreTrackedProgress(handler.getPlayer());
 		});
+		ServerPlayerEvents.COPY_FROM.register((oldPlayer, newPlayer, alive) -> {
+			for (String tag : oldPlayer.entityTags()) {
+				if (tag.startsWith(JOIN_DAY_PREFIX) || tag.startsWith(ELDER_GUARDIAN_PREFIX)
+					|| tag.startsWith(NAME_PREFIX) || tag.startsWith(ARROW_PREFIX)) {
+					newPlayer.addTag(tag);
+				}
+			}
+		});
 		ServerLivingEntityEvents.AFTER_DEATH.register((entity, source) -> {
 			if (entity instanceof ServerPlayer player) {
 				checkFirstNightDeath(player);
 			}
 			if (entity.getType() == EntityTypes.ELDER_GUARDIAN && source.getEntity() instanceof ServerPlayer player) {
 				award(player, "the_deep_end");
-				int defeated = increment(player, ELDER_GUARDIAN_PREFIX, 3);
-				awardCriterion(player, "rock_bottom", "guardian_" + defeated);
+				AdvancementHolder advancement = player.level().getServer().getAdvancements().get(
+					Identifier.fromNamespaceAndPath(GranulesMod.MOD_ID, "rock_bottom")
+				);
+				if (advancement != null) {
+					var progress = player.getAdvancements().getOrStartProgress(advancement);
+					for (int index = 1; index <= 3; index++) {
+						var criterion = progress.getCriterion("guardian_" + index);
+						if (criterion != null && !criterion.isDone()) {
+							awardCriterion(player, "rock_bottom", "guardian_" + index);
+							break;
+						}
+					}
+				}
 			}
 			if (entity instanceof KillerRabbitAccess rabbit
 				&& rabbit.granules$dropsPalePelt()
@@ -74,6 +95,10 @@ public final class GranulesAdvancements {
 		}
 	}
 
+	public static void recordSomnosatchelLink(ServerPlayer player) {
+		awardCriterion(player, "remote_access_bundle", "linked");
+	}
+
 	public static void recordSpecialName(ServerPlayer player, String name) {
 		player.addTag(NAME_PREFIX + name);
 		long count = player.entityTags().stream().filter(tag -> tag.startsWith(NAME_PREFIX)).count();
@@ -82,9 +107,11 @@ public final class GranulesAdvancements {
 		}
 	}
 
-	public static void recordArrowCombination(ServerPlayer player, String combination, int total) {
+	public static void recordArrowCombination(ServerPlayer player, String combination) {
+		if (ArrowParts.fromIdentifierSuffix(combination).filter(parts -> !parts.isBasic()).isEmpty()) {
+			return;
+		}
 		award(player, "you_have_my_bow");
-		player.addTag(ARROW_PREFIX + combination);
 		awardCriterion(player, "oh_fiddlesticks_what_now", combination);
 	}
 
@@ -121,14 +148,17 @@ public final class GranulesAdvancements {
 
 	private static void restoreTrackedProgress(ServerPlayer player) {
 		for (String tag : Set.copyOf(player.entityTags())) {
-			if (tag.startsWith(ARROW_PREFIX)) {
-				awardCriterion(player, "oh_fiddlesticks_what_now", tag.substring(ARROW_PREFIX.length()));
+			if (tag.startsWith(ARROW_PREFIX)
+				&& player.level().getServer().getAdvancements().get(Identifier.fromNamespaceAndPath(GranulesMod.MOD_ID, "oh_fiddlesticks_what_now")) != null) {
+				recordArrowCombination(player, tag.substring(ARROW_PREFIX.length()));
+				player.removeTag(tag);
 			}
 		}
 		long defeated = findNumber(player.entityTags(), ELDER_GUARDIAN_PREFIX);
 		for (int index = 1; index <= Math.min(3L, defeated); index++) {
 			awardCriterion(player, "rock_bottom", "guardian_" + index);
 		}
+		removeTags(player, ELDER_GUARDIAN_PREFIX);
 	}
 
 	private static void rememberJoinDay(ServerPlayer player) {
@@ -145,16 +175,6 @@ public final class GranulesAdvancements {
 		if (joinedDay == currentDay && timeOfDay >= 13000L && timeOfDay < 23000L) {
 			award(player, "never_that_bad");
 		}
-	}
-
-	private static int increment(ServerPlayer player, String prefix, int maximum) {
-		long current = findNumber(player.entityTags(), prefix);
-		if (current >= 0) {
-			player.removeTag(prefix + current);
-		}
-		int next = (int) Math.min(maximum, Math.max(0L, current) + 1L);
-		player.addTag(prefix + next);
-		return next;
 	}
 
 	private static long findNumber(Set<String> tags, String prefix) {

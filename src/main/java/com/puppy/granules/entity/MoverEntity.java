@@ -89,6 +89,8 @@ public class MoverEntity extends Entity {
 	private boolean backwardWasPressed;
 	private int routePreviewTicks;
 
+	private BlockPos advancementRouteOrigin;
+
 	public MoverEntity(EntityType<? extends MoverEntity> type, Level level) {
 		super(type, level);
 		this.blocksBuilding = true;
@@ -186,6 +188,10 @@ public class MoverEntity extends Entity {
 		if (passenger instanceof Player) {
 			this.boardingOrder = nextPassengerOrder;
 			nextPassengerOrder++;
+			MoverEntity leader = this.getGroupLeader();
+			if (leader != null) {
+				leader.awardLinkedGroup();
+			}
 		}
 	}
 
@@ -256,6 +262,9 @@ public class MoverEntity extends Entity {
 		}
 		output.putString("LinkedFollowers", linkedFollowersAsString());
 		output.putLong("BoardingOrder", this.boardingOrder);
+		if (this.advancementRouteOrigin != null) {
+			output.putLong("AdvancementRouteOrigin", this.advancementRouteOrigin.asLong());
+		}
 		output.putBoolean("HasTarget", this.target != null);
 		if (this.target != null) {
 			BlockPos targetJunctionPos = this.target.junctionPos();
@@ -278,6 +287,8 @@ public class MoverEntity extends Entity {
 		this.setSpeed(input.getFloatOr("Speed", 0.0F));
 		this.anchorPos = new BlockPos(input.getIntOr("AnchorX", 0), input.getIntOr("AnchorY", 0), input.getIntOr("AnchorZ", 0));
 		this.anchorRange = input.getIntOr("AnchorRange", 0);
+		long routeOrigin = input.getLongOr("AdvancementRouteOrigin", Long.MIN_VALUE);
+		this.advancementRouteOrigin = routeOrigin == Long.MIN_VALUE ? null : BlockPos.of(routeOrigin);
 		this.autonomous = input.getBooleanOr("Autonomous", false);
 		this.linkLeaderId = null;
 		this.linkOffset = Vec3.ZERO;
@@ -369,6 +380,13 @@ public class MoverEntity extends Entity {
 	public void addLinkedFollower(MoverEntity follower) {
 		if (!this.linkedFollowerIds.contains(follower.getUUID())) {
 			this.linkedFollowerIds.add(follower.getUUID());
+			this.awardLinkedGroup();
+		}
+	}
+
+	public void awardLinkedGroup() {
+		if (this.linkedFollowerIds.size() >= 3 && this.getControllingPassenger() instanceof ServerPlayer player) {
+			GranulesAdvancements.award(player, "with_friends");
 		}
 	}
 
@@ -669,6 +687,10 @@ public class MoverEntity extends Entity {
 	}
 
 	private void applyRoute(RoutePlan routePlan, Direction routeDirection) {
+		RouteTarget originJunction = this.findAdjacentJunction();
+		if (originJunction != null) {
+			this.advancementRouteOrigin = originJunction.junctionPos();
+		}
 		this.target = routePlan.target();
 		this.routeFlightAnchors = routePlan.flightAnchors();
 		this.setDirection(routeDirection);
@@ -726,18 +748,18 @@ public class MoverEntity extends Entity {
 	}
 
 	private void finishRoute(ServerLevel level) {
-		boolean reachedJunction = this.target.junctionPos() != null;
+		boolean reachedJunction = this.target.junctionPos() != null
+			&& this.advancementRouteOrigin != null
+			&& !this.target.junctionPos().equals(this.advancementRouteOrigin);
 		if (this.target.junctionPos() != null) {
 			BlockState junctionState = level.getBlockState(this.target.junctionPos());
 			this.setDirection(MoverBlock.getJunctionDirection(junctionState, this.target.junctionPos(), this.target.contactPos()));
 			this.anchorPos = this.target.junctionPos();
 			this.anchorRange = this.routeRange();
 		}
-		if (reachedJunction && this.getFirstPassenger() instanceof ServerPlayer player) {
+		if (reachedJunction && this.getControllingPassenger() instanceof ServerPlayer player) {
 			GranulesAdvancements.award(player, "people_mover");
-			if (this.linkedFollowerIds.size() >= 3) {
-				GranulesAdvancements.award(player, "with_friends");
-			}
+
 		}
 		this.target = null;
 		this.routeFlightAnchors = List.of();

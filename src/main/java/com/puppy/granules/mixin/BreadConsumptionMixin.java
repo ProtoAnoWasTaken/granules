@@ -11,17 +11,18 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 
 @Mixin(Item.class)
 public abstract class BreadConsumptionMixin {
-	@Inject(method = "finishUsingItem", at = @At("RETURN"))
-	private void granules$createBreadHeels(ItemStack itemStack, Level level, LivingEntity entity, CallbackInfoReturnable<ItemStack> callbackInfo) {
+	@WrapMethod(method = "finishUsingItem")
+	private ItemStack granules$createBreadHeels(ItemStack itemStack, Level level, LivingEntity entity, Operation<ItemStack> original) {
+		boolean bread = itemStack.is(Items.BREAD);
+		ItemStack result = original.call(itemStack, level, entity);
 		if (!ContentManifest.get().isBanned(ContentManifest.Category.LESSER_ITEMS)
 			&& !level.isClientSide()
-			&& itemStack.is(Items.BREAD)
+			&& bread
 			&& entity instanceof Player player
 			&& BreadByproducts.shouldCreateBreadHeels(player)) {
 			BreadByproducts.give(player, GranulesMod.BREAD_HEELS);
@@ -29,5 +30,6 @@ public abstract class BreadConsumptionMixin {
 				GranulesAdvancements.award(serverPlayer, "1080_heelflip");
 			}
 		}
+		return result;
 	}
 }

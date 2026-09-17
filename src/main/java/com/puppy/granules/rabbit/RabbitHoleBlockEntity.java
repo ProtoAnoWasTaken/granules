@@ -71,18 +71,14 @@ public final class RabbitHoleBlockEntity extends BlockEntity {
             arrival = findArrival(destination, targetX, targetZ);
         }
 		prepareBackside(destination, arrival);
-		if (origin.dimension().equals(RabbitHoleContent.BURROW)) {
-			GranulesAdvancements.leaveBurrow(player, arrival.getX(), arrival.getZ());
-		} else {
-			GranulesAdvancements.enterBurrow(player, worldPosition.getX(), worldPosition.getZ());
-		}
+
         if (destination.getBlockEntity(arrival) instanceof RabbitHoleBlockEntity counterpart) {
             linkedPosition = arrival.asLong();
             counterpart.receiveLink(worldPosition, charges, knownPlayers);
             setChanged();
         }
         origin.playSound(null, worldPosition, RabbitHoleContent.ENTER_SOUND, SoundSource.PLAYERS, 1.0F, 1.0F);
-        player.teleport(
+        ServerPlayer teleported = player.teleport(
             new TeleportTransition(
                 destination,
                 Vec3.atBottomCenterOf(arrival.above()),
@@ -92,6 +88,14 @@ public final class RabbitHoleBlockEntity extends BlockEntity {
                 TeleportTransition.DO_NOTHING
             )
         );
+        if (teleported == null) {
+            return;
+        }
+		if (origin.dimension().equals(RabbitHoleContent.BURROW)) {
+			GranulesAdvancements.leaveBurrow(teleported, arrival.getX(), arrival.getZ());
+		} else {
+			GranulesAdvancements.enterBurrow(teleported, worldPosition.getX(), worldPosition.getZ());
+		}
         destination.playSound(null, arrival, RabbitHoleContent.EMERGE_SOUND, SoundSource.PLAYERS, 0.25F, 1.0F);
     }
 

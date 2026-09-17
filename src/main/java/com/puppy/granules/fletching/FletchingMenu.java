@@ -72,8 +72,7 @@ public class FletchingMenu extends ItemCombinerMenu {
 		if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer
 			&& carried.getItem() instanceof FletchersArrowItem) {
 			ArrowParts parts = FletchersArrowItem.partsOf(carried);
-			long combinations = ArrowParts.ALL.stream().filter(candidate -> !candidate.isBasic()).count();
-			GranulesAdvancements.recordArrowCombination(serverPlayer, parts.identifierSuffix(), (int) combinations);
+			GranulesAdvancements.recordArrowCombination(serverPlayer, parts.identifierSuffix());
 		}
 		carried.onCraftedBy(player, carried.getCount());
 		this.resultSlots.awardUsedRecipes(player, this.getRelevantItems());
@@ -213,7 +212,13 @@ public class FletchingMenu extends ItemCombinerMenu {
 				}
 			}
 		}
-		return super.quickMoveStack(player, slotIndex);
+		ItemStack moved = super.quickMoveStack(player, slotIndex);
+		if (slotIndex == RESULT_SLOT && !moved.isEmpty()
+			&& moved.getItem() instanceof FletchersArrowItem
+			&& player instanceof net.minecraft.server.level.ServerPlayer serverPlayer) {
+			GranulesAdvancements.recordArrowCombination(serverPlayer, FletchersArrowItem.partsOf(moved).identifierSuffix());
+		}
+		return moved;
 	}
 
 	@Override

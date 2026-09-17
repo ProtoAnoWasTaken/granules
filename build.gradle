@@ -56,19 +56,6 @@ dependencies {
 	compileOnly "dev.architectury:architectury-fabric:21.0.7"
 }
 
-fabricApi {
-	configureTests {
-		createSourceSet = true
-		modId = "granules-tests"
-		enableGameTests = true
-		enableClientGameTests = false
-	}
-}
-
-dependencies {
-	gametestImplementation "maven.modrinth:jade:26.2.11+fabric"
-}
-
 processResources {
 	def version = project.version
 	inputs.property "version", version
