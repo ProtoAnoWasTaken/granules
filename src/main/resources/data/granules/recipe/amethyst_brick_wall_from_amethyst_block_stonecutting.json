@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:amethyst_block",
+  "result": {
+    "id": "granules:amethyst_brick_wall",
+    "count": 1
+  }
+}

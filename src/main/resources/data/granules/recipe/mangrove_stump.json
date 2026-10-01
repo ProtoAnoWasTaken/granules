@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:mangrove_log"
+  },
+  "result": {
+    "id": "granules:mangrove_stump",
+    "count": 6
+  }
+}

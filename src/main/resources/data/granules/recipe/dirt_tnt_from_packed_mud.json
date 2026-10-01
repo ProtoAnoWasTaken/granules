@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "GPG",
+    "PGP",
+    "GPG"
+  ],
+  "key": {
+    "G": "minecraft:gunpowder",
+    "P": "minecraft:packed_mud"
+  },
+  "result": {
+    "id": "granules:dirt_tnt",
+    "count": 1
+  }
+}

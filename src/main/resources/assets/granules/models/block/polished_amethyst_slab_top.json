@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "granules:block/polished_amethyst",
+    "side": "granules:block/polished_amethyst",
+    "top": "granules:block/polished_amethyst"
+  }
+}

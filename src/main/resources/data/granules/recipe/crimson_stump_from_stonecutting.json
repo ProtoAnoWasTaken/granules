@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:crimson_stem",
+  "result": {
+    "id": "granules:crimson_stump",
+    "count": 2
+  }
+}

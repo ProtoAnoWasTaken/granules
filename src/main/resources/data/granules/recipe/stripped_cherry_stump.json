@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:stripped_cherry_log"
+  },
+  "result": {
+    "id": "granules:stripped_cherry_stump",
+    "count": 6
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": "granules:spruce_stump"
+  },
+  "result": {
+    "id": "granules:chiseled_spruce_log",
+    "count": 1
+  }
+}

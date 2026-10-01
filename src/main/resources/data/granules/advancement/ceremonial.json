@@ -1,0 +1,91 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:earl_grey_tea"
+    },
+    "title": {
+      "translate": "advancement.granules.ceremonial.title"
+    },
+    "description": {
+      "translate": "advancement.granules.ceremonial.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "granules:cold_brew",
+  "criteria": {
+    "green_tea": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:green_tea"
+      }
+    },
+    "white_tea": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:white_tea"
+      }
+    },
+    "yellow_tea": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:yellow_tea"
+      }
+    },
+    "oolong_tea": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:oolong_tea"
+      }
+    },
+    "earl_grey_tea": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:earl_grey_tea"
+      }
+    },
+    "chamomile_tea": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:chamomile_tea"
+      }
+    },
+    "desert_tea": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:desert_tea"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "green_tea"
+    ],
+    [
+      "white_tea"
+    ],
+    [
+      "yellow_tea"
+    ],
+    [
+      "oolong_tea"
+    ],
+    [
+      "earl_grey_tea"
+    ],
+    [
+      "chamomile_tea"
+    ],
+    [
+      "desert_tea"
+    ]
+  ],
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "tea"
+    }
+  ]
+}

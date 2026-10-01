@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/acacia_stump"
+    },
+    "type=top": {
+      "model": "granules:block/acacia_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/acacia_log"
+    }
+  }
+}

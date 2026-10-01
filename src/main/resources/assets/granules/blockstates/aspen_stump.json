@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/aspen_stump"
+    },
+    "type=top": {
+      "model": "granules:block/aspen_stump_top"
+    },
+    "type=double": {
+      "model": "granules:block/aspen_log"
+    }
+  }
+}

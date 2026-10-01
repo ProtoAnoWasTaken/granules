@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:amethyst_block",
+  "result": {
+    "id": "granules:polished_amethyst_slab",
+    "count": 2
+  }
+}

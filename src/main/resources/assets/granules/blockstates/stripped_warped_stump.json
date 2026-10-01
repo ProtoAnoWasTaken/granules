@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/stripped_warped_stump"
+    },
+    "type=top": {
+      "model": "granules:block/stripped_warped_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/stripped_warped_stem"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:flint",
+    "minecraft:quartz",
+    "minecraft:echo_shard",
+    "minecraft:amethyst_shard",
+    "minecraft:prismarine_shard",
+    "minecraft:coal",
+    "minecraft:ghast_tear",
+    "minecraft:resin_clump"
+  ]
+}

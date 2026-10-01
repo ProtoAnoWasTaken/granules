@@ -1,0 +1,4 @@
+{
+  "replace": false,
+  "values": ["minecraft:tnt", "granules:dirt_tnt", "granules:dry_tnt", "granules:dynamite", "granules:dirt_bomb", "granules:dry_bomb"]
+}

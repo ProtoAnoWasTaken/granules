@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": "granules:echo_bricks"
+  },
+  "result": {
+    "id": "granules:echo_brick_stairs",
+    "count": 4
+  }
+}

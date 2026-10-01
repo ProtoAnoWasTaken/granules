@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": "granules:polished_amethyst_block"
+  },
+  "result": {
+    "id": "granules:amethyst_bricks",
+    "count": 4
+  }
+}

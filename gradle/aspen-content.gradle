@@ -1,0 +1,171 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+def aspenResources = layout.buildDirectory.dir("generated/aspen-resources")
+def vanillaAssets = file("../26.2_assets")
+def vanillaData = file("../26.2_minecraft")
+def aspenTextures = file("../granules-fabric-26.2-unbuilt/assets/textures")
+def aspenBlocks = [
+    "birch_log", "birch_wood", "stripped_birch_log", "stripped_birch_wood",
+    "birch_planks", "birch_leaves", "birch_sapling", "birch_stairs", "birch_slab",
+    "birch_fence", "birch_fence_gate", "birch_door", "birch_trapdoor", "birch_button",
+    "birch_pressure_plate", "birch_sign", "birch_wall_sign", "birch_shelf",
+    "birch_hanging_sign", "birch_wall_hanging_sign", "potted_birch_sapling"
+]
+def aspenNames = aspenBlocks + ["birch_boat", "birch_chest_boat"]
+def noItem = ["birch_wall_sign", "birch_wall_hanging_sign", "potted_birch_sapling"]
+
+sourceSets.main.resources.srcDir(aspenResources)
+
+tasks.register("generateAspenResources") {
+    inputs.file("gradle/aspen-content.gradle")
+    inputs.files(fileTree(vanillaAssets).matching {
+        include("blockstates/*birch*.json", "items/*birch*.json", "models/block/*birch*.json", "models/item/*birch*.json")
+    })
+    inputs.files(fileTree(vanillaData).matching {
+        include("recipe/*birch*.json", "advancement/recipes/**/*birch*.json", "loot_table/blocks/*birch*.json", "tags/block/**/*.json", "tags/item/**/*.json", "tags/entity_type/**/*.json")
+    })
+    inputs.files(fileTree(aspenTextures).matching {
+        include("block/*aspen*.png", "item/aspen_*.png", "entity/boat/aspen.png", "entity/chest_boat/aspen.png", "gui/*/aspen.png")
+    })
+    inputs.dir("src/main/resources/data/minecraft/tags")
+    outputs.dir(aspenResources)
+
+    doLast {
+        def output = aspenResources.get().asFile
+        delete(output)
+        def writeJson = { String path, Object value ->
+            def target = new File(output, path)
+            target.parentFile.mkdirs()
+            target.text = JsonOutput.prettyPrint(JsonOutput.toJson(value)) + "\n"
+        }
+        def translate = { String value ->
+            value.replaceAll('minecraft:((?:blocks?/|item/)?)(stripped_|potted_)?birch_', 'granules:$1$2aspen_')
+        }
+        def cloneJson = { File source, String target ->
+            writeJson(target, new JsonSlurper().parseText(translate(source.text)))
+        }
+        aspenNames.each { name ->
+            def target = name.replace("birch", "aspen")
+            if (name in aspenBlocks) {
+                cloneJson(new File(vanillaAssets, "blockstates/${name}.json"), "assets/granules/blockstates/${target}.json")
+            }
+            if (!(name in noItem)) {
+                cloneJson(new File(vanillaAssets, "items/${name}.json"), "assets/granules/items/${target}.json")
+            }
+            if (name in aspenBlocks && !name.contains("wall_")) {
+                cloneJson(new File(vanillaData, "loot_table/blocks/${name}.json"), "data/granules/loot_table/blocks/${target}.json")
+            }
+        }
+        ["block", "item"].each { kind ->
+            new File(vanillaAssets, "models/${kind}").listFiles().findAll { model ->
+                aspenNames.any { name ->
+                    model.name == "${name}.json" || model.name.startsWith("${name}_")
+                }
+            }.each { model ->
+                cloneJson(model, "assets/granules/models/${kind}/${model.name.replace('birch', 'aspen')}")
+            }
+        }
+        ["block", "item"].each { kind ->
+            copy {
+                from(new File(aspenTextures, kind))
+                include("*aspen*.png")
+                exclude { element ->
+                    file("src/main/resources/assets/granules/textures/${kind}/${element.name}").exists()
+                }
+                into(new File(output, "assets/granules/textures/${kind}"))
+            }
+        }
+        ["boat", "chest_boat"].each { kind ->
+            copy {
+                from(new File(aspenTextures, "entity/${kind}/aspen.png"))
+                into(new File(output, "assets/granules/textures/entity/${kind}"))
+            }
+        }
+        copy {
+            from(aspenTextures)
+            include("gui/*/aspen.png")
+            into(new File(output, "assets/granules/textures"))
+        }
+        writeJson("assets/granules/models/block/aspen_leaves.json", [
+            parent: "minecraft:block/cube_all",
+            textures: [all: "granules:block/aspen_leaves"]
+        ])
+        writeJson("assets/granules/items/aspen_leaves.json", [model: [type: "minecraft:model", model: "granules:block/aspen_leaves"]])
+        writeJson("assets/granules/textures/block/aspen_leaves.png.mcmeta", [texture: [mipmap_strategy: "dark_cutout"]])
+        fileTree(new File(vanillaData, "recipe")).matching {
+            include("*birch*.json")
+        }.files.each { recipe ->
+            def data = new JsonSlurper().parse(recipe)
+            if (data.result instanceof Map && aspenNames.any { data.result.id == "minecraft:${it}" }) {
+                cloneJson(recipe, "data/granules/recipe/${recipe.name.replace('birch', 'aspen')}")
+            }
+        }
+        ["block", "item", "entity_type"].each { kind ->
+            def tags = new File(vanillaData, "tags/${kind}")
+            fileTree(tags).matching {
+                include("**/*.json")
+            }.files.each { tag ->
+                def data = new JsonSlurper().parse(tag)
+                def selected = data.values.findAll { value ->
+                    value instanceof String && (aspenNames.any { value == "minecraft:${it}" } || value == "#minecraft:birch_logs")
+                }.collect { value ->
+                    translate(value)
+                }
+                if (!selected.isEmpty()) {
+                    def relative = tags.toPath().relativize(tag.toPath()).toString().replace('\\', '/')
+                    def namespace = relative == "birch_logs.json" ? "granules" : "minecraft"
+                    def target = "data/${namespace}/tags/${kind}/${relative.replace('birch', 'aspen')}"
+                    def existing = file("src/main/resources/${target}")
+                    if (existing.exists()) {
+                        def existingTag = new JsonSlurper().parse(existing)
+                        if (!existingTag.values.containsAll(selected)) {
+                            throw new GradleException("Existing tag must include Aspen entries: ${target}")
+                        }
+                    } else {
+                        writeJson(target, [replace: false, values: selected])
+                    }
+                }
+            }
+        }
+        def advancements = new File(vanillaData, "advancement/recipes")
+        fileTree(advancements).matching {
+            include("**/*birch*.json")
+        }.files.each { advancement ->
+            def data = new JsonSlurper().parse(advancement)
+            if (data.rewards?.recipes?.every { recipe ->
+                aspenNames.any { recipe == "minecraft:${it}" }
+            }) {
+                def relative = advancements.toPath().relativize(advancement.toPath()).toString().replace('\\', '/')
+                cloneJson(advancement, "data/granules/advancement/recipes/${relative.replace('birch', 'aspen')}")
+            }
+        }
+        def products = [
+            stairs: [2, 1], slab: [2, 2], fence: [10, 3], fence_gate: [8, 1],
+            sign: [13, 3], door: [4, 1], trapdoor: [6, 1], pressure_plate: [4, 1],
+            button: [2, 1], stick: [2, 2], ladder: [7, 3], shelf: [8, 1]
+        ]
+        [planks: 2, logs: 8].each { input, units ->
+            products.each { product, ratio ->
+                def item = product in ["stick", "ladder"] ? "minecraft:${product}" : "granules:aspen_${product}"
+                writeJson("data/granules/recipe/aspen_${product}_from_${input}_stonecutting.json", [
+                    type: "minecraft:stonecutting",
+                    ingredient: input == "logs" ? "#granules:aspen_logs" : "granules:aspen_planks",
+                    result: [id: item, count: Math.max(1, (units * ratio[1]).intdiv(ratio[0]))]
+                ])
+            }
+        }
+        writeJson("data/granules/recipe/aspen_planks_from_logs_stonecutting.json", [
+            type: "minecraft:stonecutting", ingredient: "#granules:aspen_logs",
+            result: [id: "granules:aspen_planks", count: 4]
+        ])
+    }
+}
+
+tasks.named("processResources").configure {
+    dependsOn("generateAspenResources")
+}
+
+tasks.named("sourcesJar").configure {
+    dependsOn("generateAspenResources")
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "GPG",
+    "GSG",
+    "GPG"
+  ],
+  "key": {
+    "G": "minecraft:gunpowder",
+    "P": "minecraft:sand",
+    "S": "minecraft:sponge"
+  },
+  "result": {
+    "id": "granules:dry_tnt",
+    "count": 1
+  }
+}

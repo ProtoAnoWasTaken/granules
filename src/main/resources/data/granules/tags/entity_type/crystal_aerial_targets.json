@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:phantom",
+    "minecraft:blaze",
+    "minecraft:vex",
+    "minecraft:wither"
+  ]
+}

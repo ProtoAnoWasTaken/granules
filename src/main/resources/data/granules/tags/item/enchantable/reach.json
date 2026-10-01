@@ -4,6 +4,9 @@
     "#minecraft:shovels",
     "#minecraft:hoes",
     "minecraft:shears",
+    "minecraft:flint_and_steel",
+    "granules:iron_lock",
+    "granules:gilded_tongs",
     "granules:opera_glove"
   ],
   "replace": false

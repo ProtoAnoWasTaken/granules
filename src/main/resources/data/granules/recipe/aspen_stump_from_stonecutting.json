@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "granules:aspen_log",
+  "result": {
+    "id": "granules:aspen_stump",
+    "count": 2
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": "granules:stripped_dark_oak_stump"
+  },
+  "result": {
+    "id": "granules:chiseled_stripped_dark_oak_log",
+    "count": 1
+  }
+}

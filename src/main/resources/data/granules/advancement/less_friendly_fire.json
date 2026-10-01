@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:gunpowder"
+    },
+    "title": {
+      "translate": "advancement.granules.less_friendly_fire.title"
+    },
+    "description": {
+      "translate": "advancement.granules.less_friendly_fire.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:adventure/voluntary_exile",
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/spruce_stump"
+    },
+    "type=top": {
+      "model": "granules:block/spruce_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/spruce_log"
+    }
+  }
+}

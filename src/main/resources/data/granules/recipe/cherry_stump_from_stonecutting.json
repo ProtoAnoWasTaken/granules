@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:cherry_log",
+  "result": {
+    "id": "granules:cherry_stump",
+    "count": 2
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:end_crystal"
+    },
+    "title": {
+      "translate": "advancement.granules.anti_air_alternatives.title"
+    },
+    "description": {
+      "translate": "advancement.granules.anti_air_alternatives.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:end/respawn_dragon",
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "crystal_defense"
+    }
+  ]
+}

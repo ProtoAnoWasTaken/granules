@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "unstable=false": {
+      "model": "granules:block/dry_tnt"
+    },
+    "unstable=true": {
+      "model": "granules:block/dry_tnt"
+    }
+  }
+}

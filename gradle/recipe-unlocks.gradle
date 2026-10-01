@@ -1,0 +1,82 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+def unlockResources = layout.buildDirectory.dir("generated/recipe-unlock-resources")
+def recipeInputs = sourceSets.main.resources.srcDirs.toList()
+sourceSets.main.resources.srcDir(unlockResources)
+
+tasks.register("generateRecipeUnlocks") {
+    dependsOn("generateAspenResources", "generateChorusResources", "generateTeaResources", "generateWoodAndPaintingResources", "generateFletchersArrowResources", "generateDiscResources")
+    inputs.files(recipeInputs.collect { directory ->
+        fileTree(directory).matching {
+            include("data/granules/recipe/**/*.json", "data/**/advancement/**/*.json")
+        }
+    })
+    outputs.dir(unlockResources)
+    doLast {
+        def output = unlockResources.get().asFile
+        delete(output)
+        def recipes = [:]
+        def unlocked = [] as Set
+        recipeInputs.each { directory ->
+            fileTree(directory).matching {
+                include("data/granules/recipe/**/*.json")
+            }.files.each { source ->
+                def relative = new File(directory, "data/granules/recipe").toPath().relativize(source.toPath()).toString().replace('\\', '/')
+                recipes["granules:${relative.replaceAll(/\.json$/, '')}".toString()] = new JsonSlurper().parse(source)
+            }
+            fileTree(directory).matching {
+                include("data/**/advancement/**/*.json")
+            }.files.each { source ->
+                def advancement = new JsonSlurper().parse(source)
+                unlocked.addAll(advancement.rewards?.recipes ?: [])
+            }
+        }
+        int generated = 0
+        recipes.each { id, recipe ->
+            if (unlocked.contains(id)) {
+                return
+            }
+            def ingredients = []
+            if (recipe.type == "granules:pet_bed") {
+                def wood = recipe.wood ?: "oak_log"
+                def namespace = wood in ["aspen_log", "stripped_aspen_log", "chorus_block"] ? "granules" : "minecraft"
+                ingredients.add("${namespace}:${wood}".toString())
+            } else {
+                ingredients.addAll(recipe.key?.values() ?: [])
+                ingredients.addAll(recipe.ingredients ?: [])
+                ["ingredient", "template", "base", "addition", "shaft", "fletch", "head"].each { name ->
+                    if (recipe[name] != null) {
+                        ingredients.add(recipe[name])
+                    }
+                }
+            }
+            ingredients = ingredients.flatten().unique()
+            if (ingredients.isEmpty() || ingredients.any { !(it instanceof String) }) {
+                throw new GradleException("Recipe ${id} needs an explicit ingredient discovery rule")
+            }
+            def criteria = [:]
+            ingredients.eachWithIndex { ingredient, index ->
+                criteria["has_ingredient_${index}"] = [trigger: "minecraft:inventory_changed", conditions: [items: [[items: ingredient]]]]
+            }
+            criteria.has_recipe = [trigger: "minecraft:recipe_unlocked", conditions: [recipe: id]]
+            def advancement = [parent: "minecraft:recipes/root", criteria: criteria,
+                requirements: [criteria.keySet().toList()], rewards: [recipes: [id]]]
+            if (recipe["fabric:load_conditions"] != null) {
+                advancement["fabric:load_conditions"] = recipe["fabric:load_conditions"]
+            }
+            def destination = new File(output, "data/granules/advancement/recipes/discovery/${id.substring('granules:'.length())}.json")
+            destination.parentFile.mkdirs()
+            destination.text = JsonOutput.prettyPrint(JsonOutput.toJson(advancement))
+            generated++
+        }
+        logger.lifecycle("Verified ${recipes.size()} Granules recipes; supplied ${generated} missing discovery advancements")
+    }
+}
+
+tasks.named("processResources").configure {
+    dependsOn("generateRecipeUnlocks")
+}
+tasks.named("sourcesJar").configure {
+    dependsOn("generateRecipeUnlocks")
+}

@@ -1,0 +1,114 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+def chorusResources = layout.buildDirectory.dir("generated/chorus-resources")
+def vanillaAssets = file("../26.2_assets")
+def vanillaData = file("../26.2_minecraft")
+def textures = file("../granules-fabric-26.2-unbuilt/assets/textures")
+def blocks = [
+    "bamboo_block", "bamboo_planks", "bamboo_mosaic", "bamboo_stairs", "bamboo_slab",
+    "bamboo_mosaic_stairs", "bamboo_mosaic_slab", "bamboo_fence", "bamboo_fence_gate",
+    "bamboo_door", "bamboo_trapdoor", "bamboo_button", "bamboo_pressure_plate", "bamboo_shelf",
+    "bamboo_sign", "bamboo_wall_sign", "bamboo_hanging_sign", "bamboo_wall_hanging_sign"
+]
+def names = blocks + ["bamboo_raft", "bamboo_chest_raft"]
+def noItem = ["bamboo_wall_sign", "bamboo_wall_hanging_sign"]
+
+sourceSets.main.resources.srcDir(chorusResources)
+
+tasks.register("generateChorusResources") {
+    dependsOn("generateWoodAndPaintingResources")
+    inputs.file("gradle/chorus-content.gradle")
+    inputs.files(fileTree(layout.buildDirectory.dir("generated/wood-and-painting-resources/data/granules/recipe")).matching {
+        include("bamboo*.json")
+    })
+    inputs.files(fileTree(vanillaAssets).matching {
+        include("blockstates/bamboo*.json", "items/bamboo*.json", "models/block/bamboo*.json", "models/item/bamboo*.json")
+    })
+    inputs.files(fileTree(vanillaData).matching {
+        include("recipe/*bamboo*.json", "advancement/recipes/**/*bamboo*.json", "loot_table/blocks/bamboo*.json")
+    })
+    inputs.files(fileTree(textures).matching {
+        include("block/chorus*.png", "item/chorus*.png", "entity/*/chorus.png", "gui/*/chorus.png")
+    })
+    outputs.dir(chorusResources)
+    doLast {
+        def output = chorusResources.get().asFile
+        delete(output)
+        def writeJson = { String path, Object value ->
+            def target = new File(output, path)
+            target.parentFile.mkdirs()
+            target.text = JsonOutput.prettyPrint(JsonOutput.toJson(value)) + "\n"
+        }
+        def translate = { String value ->
+            value.replace('minecraft:stripped_bamboo_block', 'granules:chorus_block')
+                .replace('minecraft:block/stripped_bamboo_block', 'granules:block/chorus_block')
+                .replaceAll('minecraft:((?:blocks?/|item/)?)(bamboo_)', 'granules:$1chorus_')
+                .replace('"minecraft:bamboo"', '"minecraft:chorus_fruit"')
+        }
+        def cloneJson = { File source, String target ->
+            writeJson(target, new JsonSlurper().parseText(translate(source.text)))
+        }
+        names.each { name ->
+            def target = name.replace('bamboo', 'chorus')
+            if (name in blocks) {
+                cloneJson(new File(vanillaAssets, "blockstates/${name}.json"), "assets/granules/blockstates/${target}.json")
+            }
+            if (!(name in noItem)) {
+                cloneJson(new File(vanillaAssets, "items/${name}.json"), "assets/granules/items/${target}.json")
+            }
+            if (name in blocks && !(name in noItem)) {
+                cloneJson(new File(vanillaData, "loot_table/blocks/${name}.json"), "data/granules/loot_table/blocks/${target}.json")
+            }
+        }
+        ["block", "item"].each { kind ->
+            new File(vanillaAssets, "models/${kind}").listFiles().findAll { model ->
+                names.any { name ->
+                    model.name == "${name}.json" || model.name.startsWith("${name}_")
+                }
+            }.each { model ->
+                cloneJson(model, "assets/granules/models/${kind}/${model.name.replace('bamboo', 'chorus')}")
+            }
+        }
+        copy {
+            from(textures)
+            include("block/chorus*.png", "item/chorus*.png", "entity/*/chorus.png", "gui/*/chorus.png")
+            into(new File(output, "assets/granules/textures"))
+        }
+        def recipes = []
+        fileTree(new File(vanillaData, "recipe")).matching {
+            include("*bamboo*.json")
+        }.files.each { recipe ->
+            def data = new JsonSlurper().parse(recipe)
+            if (data.result instanceof Map && names.any { data.result.id == "minecraft:${it}" }) {
+                recipes.add(recipe.name.replace('.json', ''))
+                cloneJson(recipe, "data/granules/recipe/${recipe.name.replace('bamboo', 'chorus')}")
+            }
+        }
+        def advancements = new File(vanillaData, "advancement/recipes")
+        fileTree(layout.buildDirectory.dir("generated/wood-and-painting-resources/data/granules/recipe")).matching {
+            include("bamboo*.json")
+        }.files.each { recipe ->
+            cloneJson(recipe, "data/granules/recipe/${recipe.name.replace('bamboo', 'chorus')}")
+        }
+        fileTree(advancements).matching {
+            include("**/*bamboo*.json")
+        }.files.each { advancement ->
+            def data = new JsonSlurper().parse(advancement)
+            if (data.rewards?.recipes?.every { recipe ->
+                recipes.any { recipe == "minecraft:${it}" }
+            }) {
+                def relative = advancements.toPath().relativize(advancement.toPath()).toString().replace('\\', '/')
+                cloneJson(advancement, "data/granules/advancement/recipes/${relative.replace('bamboo', 'chorus')}")
+            }
+        }
+    }
+}
+
+tasks.named("processResources").configure {
+    dependsOn("generateChorusResources")
+}
+
+tasks.named("sourcesJar").configure {
+    dependsOn("generateChorusResources")
+}

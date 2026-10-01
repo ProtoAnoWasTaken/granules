@@ -1,0 +1,52 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+tasks.named("processResources").configure {
+    inputs.file("gradle/manifest-conditions.gradle")
+    doLast {
+        def recipeItems = [:]
+        def collectIds
+        collectIds = { value, result ->
+            if (value instanceof Map) {
+                value.each { key, child ->
+                    if (key != "fabric:load_conditions") {
+                        collectIds(child, result)
+                    }
+                }
+            } else if (value instanceof List) {
+                value.each { child -> collectIds(child, result) }
+            } else if (value instanceof String && (value.startsWith("granules:") || value.startsWith("#granules:"))) {
+                result.add(value)
+            }
+        }
+        fileTree(destinationDir).matching {
+            include("data/granules/recipe/**/*.json")
+        }.files.each { source ->
+            def recipe = new JsonSlurper().parse(source)
+            def items = [] as Set
+            collectIds(recipe, items)
+            def id = "granules:" + new File(destinationDir, "data/granules/recipe").toPath()
+                .relativize(source.toPath()).toString().replace('\\', '/').replaceAll(/\.json$/, '')
+            recipeItems[id.toString()] = items
+            if (!items.isEmpty()) {
+                def conditions = (recipe["fabric:load_conditions"] ?: []).findAll { it.condition != "granules:items_enabled" }
+                conditions.add([condition: "granules:items_enabled", items: items.toList().sort()])
+                recipe["fabric:load_conditions"] = conditions
+                source.text = JsonOutput.prettyPrint(JsonOutput.toJson(recipe))
+            }
+        }
+        fileTree(destinationDir).matching {
+            include("data/granules/advancement/**/*.json")
+        }.files.each { source ->
+            def advancement = new JsonSlurper().parse(source)
+            def items = [] as Set
+            (advancement.rewards?.recipes ?: []).each { id -> items.addAll(recipeItems[id] ?: []) }
+            if (!items.isEmpty()) {
+                def conditions = (advancement["fabric:load_conditions"] ?: []).findAll { it.condition != "granules:items_enabled" }
+                conditions.add([condition: "granules:items_enabled", items: items.toList().sort()])
+                advancement["fabric:load_conditions"] = conditions
+                source.text = JsonOutput.prettyPrint(JsonOutput.toJson(advancement))
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ingredient": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:flint"
+          }
+        ]
+      }
+    },
+    "has_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "granules:string_from_flint_and_wool"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ingredient",
+      "has_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "granules:string_from_flint_and_wool"
+    ]
+  }
+}

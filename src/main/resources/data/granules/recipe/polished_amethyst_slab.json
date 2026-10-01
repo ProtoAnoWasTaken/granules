@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": "granules:polished_amethyst_block"
+  },
+  "result": {
+    "id": "granules:polished_amethyst_slab",
+    "count": 6
+  }
+}

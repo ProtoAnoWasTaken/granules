@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:stripped_acacia_log",
+  "result": {
+    "id": "granules:stripped_acacia_stump",
+    "count": 2
+  }
+}

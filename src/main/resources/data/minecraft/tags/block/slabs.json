@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "granules:polished_echo_shard_slab",
+    "granules:echo_brick_slab",
+    "granules:polished_amethyst_slab",
+    "granules:amethyst_brick_slab",
+    "granules:chorus_mosaic_slab"
+  ]
+}

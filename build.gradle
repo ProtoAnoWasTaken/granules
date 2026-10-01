@@ -8,8 +8,11 @@ import groovy.json.JsonSlurper
 import java.awt.image.BufferedImage
 import javax.imageio.ImageIO
 
+
 version = project.mod_version
 group = project.maven_group
+
+layout.buildDirectory = file("../granules-build")
 
 base {
 	archivesName = "granules-fabric-${project.minecraft_version}"
@@ -54,6 +57,25 @@ dependencies {
 	compileOnly "maven.modrinth:jade:26.2.11+fabric"
 	compileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:26.2.820"
 	compileOnly "dev.architectury:architectury-fabric:21.0.7"
+}
+
+sourceSets.main.output.dir(file("build-inputs/compatibility-classes"))
+
+def localTestConfiguration = file("../granules-game-tests/testing.gradle")
+if (localTestConfiguration.isFile()) {
+    apply from: localTestConfiguration
+}
+
+tasks.register("copyTestVersion", Copy) {
+	dependsOn(tasks.named("jar"))
+	from(tasks.named("jar").flatMap {
+		it.archiveFile
+	})
+	into(file("../granules test versions"))
+}
+
+tasks.named("build").configure {
+	dependsOn(tasks.named("copyTestVersion"))
 }
 
 processResources {
@@ -103,6 +125,10 @@ sourceSets.main.resources.srcDir(fletchersArrowResources)
 
 tasks.register("generateFletchersArrowResources") {
 	outputs.dir(fletchersArrowResources)
+	inputs.dir("build-inputs/pet-bed")
+	inputs.files(["aspen_log", "stripped_aspen_log", "chorus_block"].collect { wood ->
+		file("../granules-fabric-26.2-unbuilt/assets/textures/block/${wood}.png")
+	})
 
 	doLast {
 		def output = fletchersArrowResources.get().asFile
@@ -127,7 +153,8 @@ tasks.register("generateFletchersArrowResources") {
 			[id: "amethyst", ingredient: "minecraft:amethyst_shard", itemTexture: "arrow_head_amethyst", entityTexture: "arrow_head_amethyst"],
 			[id: "prismarine", ingredient: "minecraft:prismarine_shard", itemTexture: "arrow_head_prismarine", entityTexture: "arrow_head_prismarine"],
 			[id: "coal", ingredient: "minecraft:coal", itemTexture: "arrow_head_coal", entityTexture: "arrow_head_coal"],
-			[id: "ghast", ingredient: "minecraft:ghast_tear", itemTexture: "arrow_head_ghast", entityTexture: "arrow_head_ghast"]
+			[id: "ghast", ingredient: "minecraft:ghast_tear", itemTexture: "arrow_head_ghast", entityTexture: "arrow_head_ghast"],
+			[id: "resin", ingredient: "minecraft:resin_clump", itemTexture: "arrow_tip_resin", entityTexture: "arrow_tip_resin"]
 		]
 		def modelCases = []
 		shafts.each { shaft ->
@@ -223,7 +250,10 @@ tasks.register("generateFletchersArrowResources") {
 			"warped_stem",
 			"stripped_warped_stem",
 			"bamboo_block",
-			"stripped_bamboo_block"
+			"stripped_bamboo_block",
+			"aspen_log",
+			"stripped_aspen_log",
+			"chorus_block"
 		]
 		def petBedWools = [
 			"white",
@@ -295,6 +325,9 @@ tasks.register("generateFletchersArrowResources") {
 		}
 		petBedWoods.each { wood ->
 			def source = new File(petBedTextureDirectory, "${wood}.png")
+			if (wood in ["aspen_log", "stripped_aspen_log", "chorus_block"]) {
+				source = file("../granules-fabric-26.2-unbuilt/assets/textures/block/${wood}.png")
+			}
 			petBedRecolor(
 				petBedWoodMask,
 				petBedPalette(source),
@@ -314,9 +347,15 @@ tasks.register("generateFletchersArrowResources") {
 		def petBedRotations = [north: 0, east: 90, south: 180, west: 270]
 		petBedWoods.each { wood ->
 			petBedWools.each { wool ->
+				if (wood != "oak_log" || wool != "white") {
+					def recipeFile = new File(output, "data/granules/recipe/pet_bed_${wood}_${wool}.json")
+					recipeFile.parentFile.mkdirs()
+					recipeFile.text = JsonOutput.prettyPrint(JsonOutput.toJson([type: "granules:pet_bed", wood: wood, wool: wool]))
+				}
 				def modelId = "pet_bed_${wood}_${wool}"
 				def blockModel = new JsonSlurper().parseText(JsonOutput.toJson(petBedTemplate))
-				blockModel.textures["2"] = "minecraft:block/${wood}"
+				def woodNamespace = wood in ["aspen_log", "stripped_aspen_log", "chorus_block"] ? "granules" : "minecraft"
+				blockModel.textures["2"] = "${woodNamespace}:block/${wood}"
 				blockModel.textures["3"] = "minecraft:block/${wool}_wool"
 				blockModel.textures.particle = "minecraft:block/${wool}_wool"
 				def blockModelFile = new File(output, "assets/granules/models/block/${modelId}.json")
@@ -411,3 +450,10 @@ tasks.named("sourcesJar").configure {
 tasks.named("sourcesJar").configure {
 	dependsOn(tasks.named("generateFletchersArrowResources"))
 }
+
+apply from: "gradle/granules-content.gradle"
+apply from: "gradle/aspen-content.gradle"
+apply from: "gradle/chorus-content.gradle"
+apply from: "gradle/tea-content.gradle"
+apply from: "gradle/recipe-unlocks.gradle"
+apply from: "gradle/manifest-conditions.gradle"

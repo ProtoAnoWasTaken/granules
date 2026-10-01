@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "granules:aspen_slab",
+    "#granules:stumps",
+    "granules:chorus_slab"
+  ]
+}

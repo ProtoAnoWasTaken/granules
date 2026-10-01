@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "granules:block/echo_shard_block"
+  }
+}

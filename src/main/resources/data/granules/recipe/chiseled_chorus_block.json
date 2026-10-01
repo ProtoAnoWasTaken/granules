@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "granules:chorus_block",
+  "result": {
+    "id": "granules:chiseled_chorus_block",
+    "count": 1
+  }
+}

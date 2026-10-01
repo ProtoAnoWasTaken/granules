@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "granules:chorus_mosaic",
+    "#granules:chorus_blocks"
+  ]
+}

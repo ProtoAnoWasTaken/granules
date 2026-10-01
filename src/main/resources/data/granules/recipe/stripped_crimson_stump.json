@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:stripped_crimson_stem"
+  },
+  "result": {
+    "id": "granules:stripped_crimson_stump",
+    "count": 6
+  }
+}

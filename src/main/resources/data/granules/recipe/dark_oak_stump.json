@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:dark_oak_log"
+  },
+  "result": {
+    "id": "granules:dark_oak_stump",
+    "count": 6
+  }
+}

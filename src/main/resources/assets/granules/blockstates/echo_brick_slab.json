@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/echo_brick_slab"
+    },
+    "type=double": {
+      "model": "granules:block/echo_bricks"
+    },
+    "type=top": {
+      "model": "granules:block/echo_brick_slab_top"
+    }
+  }
+}

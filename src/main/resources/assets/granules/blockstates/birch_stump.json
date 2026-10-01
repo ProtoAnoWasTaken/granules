@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/birch_stump"
+    },
+    "type=top": {
+      "model": "granules:block/birch_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/birch_log"
+    }
+  }
+}

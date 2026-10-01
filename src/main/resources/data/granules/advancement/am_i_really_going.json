@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "granules:grave_shovel"
+    },
+    "title": {
+      "translate": "advancement.granules.am_i_really_going.title"
+    },
+    "description": {
+      "translate": "advancement.granules.am_i_really_going.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "granules:something_suspicious",
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "grave_shovel"
+    }
+  ]
+}

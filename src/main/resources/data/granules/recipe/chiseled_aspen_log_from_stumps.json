@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "key": {
+    "S": "granules:aspen_stump"
+  },
+  "result": {
+    "id": "granules:chiseled_aspen_log",
+    "count": 1
+  }
+}

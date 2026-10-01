@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:ender_eye"
+    },
+    "title": {
+      "translate": "advancement.granules.double_vision.title"
+    },
+    "description": {
+      "translate": "advancement.granules.double_vision.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:husbandry/wax_on",
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "copper_golem_upgrades"
+    }
+  ]
+}

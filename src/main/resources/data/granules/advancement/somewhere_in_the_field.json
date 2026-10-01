@@ -16,17 +16,34 @@
     "description": {
       "translate": "advancement.granules.somewhere_in_the_field.description"
     },
-    "frame": "task",
+    "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
+    "crafted": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "granules:ender_radar"
+      }
+    },
+    "annulus": {
+      "trigger": "minecraft:impossible"
+    },
+    "stronghold_chunk": {
+      "trigger": "minecraft:impossible"
+    },
     "triggered": {
       "trigger": "minecraft:impossible"
     }
   },
-  "parent": "minecraft:story/follow_ender_eye",
+  "requirements": [
+    ["triggered", "crafted"],
+    ["triggered", "annulus"],
+    ["triggered", "stronghold_chunk"]
+  ],
+  "parent": "minecraft:adventure/avoid_vibration",
   "fabric:load_conditions": [
     {
       "condition": "granules:content_enabled",

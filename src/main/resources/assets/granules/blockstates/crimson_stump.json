@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/crimson_stump"
+    },
+    "type=top": {
+      "model": "granules:block/crimson_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/crimson_stem"
+    }
+  }
+}

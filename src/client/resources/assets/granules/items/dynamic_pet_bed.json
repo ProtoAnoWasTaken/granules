@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "granules:block/dynamic_pet_bed",
+    "model": {
+      "type": "granules:dynamic_pet_bed"
+    }
+  }
+}

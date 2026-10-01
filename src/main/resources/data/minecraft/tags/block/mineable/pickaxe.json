@@ -10,6 +10,25 @@
     "granules:caster",
     "granules:philosopher",
     "granules:mover",
-    "granules:junction"
+    "granules:junction",
+    "granules:echo_shard_block",
+    "granules:polished_echo_shard_block",
+    "granules:polished_echo_shard_stairs",
+    "granules:polished_echo_shard_slab",
+    "granules:polished_echo_shard_wall",
+    "granules:echo_shard_pillar",
+    "granules:echo_bricks",
+    "granules:echo_brick_stairs",
+    "granules:echo_brick_slab",
+    "granules:echo_brick_wall",
+    "granules:polished_amethyst_block",
+    "granules:polished_amethyst_stairs",
+    "granules:polished_amethyst_slab",
+    "granules:polished_amethyst_wall",
+    "granules:amethyst_pillar",
+    "granules:amethyst_bricks",
+    "granules:amethyst_brick_stairs",
+    "granules:amethyst_brick_slab",
+    "granules:amethyst_brick_wall"
   ]
 }

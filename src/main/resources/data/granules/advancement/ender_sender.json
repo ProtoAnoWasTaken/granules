@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:end_crystal"
+    },
+    "title": {
+      "translate": "advancement.granules.ender_sender.title"
+    },
+    "description": {
+      "translate": "advancement.granules.ender_sender.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "granules:anti_air_alternatives",
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "crystal_defense"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "granules:aspen_pressure_plate",
+    "granules:chorus_pressure_plate"
+  ]
+}

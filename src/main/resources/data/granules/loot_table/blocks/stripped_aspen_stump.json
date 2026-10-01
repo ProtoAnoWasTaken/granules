@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "granules:stripped_aspen_stump",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2,
+              "conditions": [
+                {
+                  "condition": "minecraft:block_state_property",
+                  "block": "granules:stripped_aspen_stump",
+                  "properties": {
+                    "type": "double"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

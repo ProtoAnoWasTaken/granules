@@ -1,0 +1,90 @@
+import groovy.json.JsonOutput
+
+def resources = layout.buildDirectory.dir("generated/wood-and-painting-resources")
+def paintings = [
+    hound: [1, 1], kettle: [1, 1],
+    tallhound: [1, 2], whimper: [1, 2], longhound: [2, 1],
+    aurora: [2, 2], cloud_fortress: [2, 2], commodore: [2, 2], fortune_spiral: [2, 2],
+    ice_wall: [2, 2], otherworld: [2, 2], polluere: [2, 2], revere: [2, 2],
+    tetrachil: [2, 2], wet_dry: [2, 2]
+]
+
+sourceSets.main.resources.srcDir(resources)
+
+tasks.register("generateWoodAndPaintingResources") {
+    inputs.files(paintings.keySet().collect { name ->
+        file("src/main/resources/assets/granules/textures/painting/${name}.png")
+    })
+    inputs.file("gradle/granules-content.gradle")
+    outputs.dir(resources)
+
+    doLast {
+        def output = resources.get().asFile
+        delete(output)
+        def writeJson = { String path, Object value ->
+            def target = new File(output, path)
+            target.parentFile.mkdirs()
+            target.text = JsonOutput.prettyPrint(JsonOutput.toJson(value)) + "\n"
+        }
+        def woods = ["oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "crimson", "warped", "bamboo"]
+        def products = [
+            stairs: [cost: 2, count: 1],
+            slab: [cost: 2, count: 2],
+            fence: [cost: 10, count: 3],
+            fence_gate: [cost: 8, count: 1],
+            sign: [cost: 13, count: 3],
+            door: [cost: 4, count: 1],
+            trapdoor: [cost: 6, count: 1],
+            pressure_plate: [cost: 4, count: 1],
+            button: [cost: 2, count: 1],
+            stick: [cost: 2, count: 2],
+            ladder: [cost: 7, count: 3]
+        ]
+        woods.each { wood ->
+            def logTag = wood == "bamboo" ? "bamboo_blocks" : "${wood}_${wood in ["crimson", "warped"] ? "stems" : "logs"}"
+            def inputs = [
+                [name: "planks", ingredient: "minecraft:${wood}_planks", units: 2],
+                [name: "logs", ingredient: "#minecraft:${logTag}", units: wood == "bamboo" ? 4 : 8]
+            ]
+            inputs.each { input ->
+                products.each { product, ratio ->
+                    def result = product in ["stick", "ladder"] ? product : "${wood}_${product}"
+                    int count = Math.max(1, (input.units * ratio.count).intdiv(ratio.cost))
+                    writeJson("data/granules/recipe/${wood}_${product}_from_${input.name}_stonecutting.json", [
+                        type: "minecraft:stonecutting",
+                        ingredient: input.ingredient,
+                        result: [id: "minecraft:${result}", count: count]
+                    ])
+                }
+            }
+            writeJson("data/granules/recipe/${wood}_planks_from_logs_stonecutting.json", [
+                type: "minecraft:stonecutting",
+                ingredient: "#minecraft:${logTag}",
+                result: [id: "minecraft:${wood}_planks", count: wood == "bamboo" ? 2 : 4]
+            ])
+        }
+        ["bamboo_planks", "bamboo_mosaic"].each { input ->
+            [stairs: 1, slab: 2].each { product, count ->
+                writeJson("data/granules/recipe/bamboo_mosaic_${product}_from_${input}_stonecutting.json", [
+                    type: "minecraft:stonecutting", ingredient: "minecraft:${input}",
+                    result: [id: "minecraft:bamboo_mosaic_${product}", count: count]
+                ])
+            }
+        }
+        paintings.each { name, size ->
+            writeJson("data/granules/painting_variant/${name}.json", [
+                asset_id: "granules:${name}", width: size[0], height: size[1],
+                title: [text: name.split("_").collect { word -> word.capitalize() }.join(" "), color: "yellow"],
+                author: [text: "Unknown Artist", color: "gray"]
+            ])
+        }
+    }
+}
+
+tasks.named("processResources").configure {
+    dependsOn(tasks.named("generateWoodAndPaintingResources"))
+}
+
+tasks.named("sourcesJar").configure {
+    dependsOn(tasks.named("generateWoodAndPaintingResources"))
+}

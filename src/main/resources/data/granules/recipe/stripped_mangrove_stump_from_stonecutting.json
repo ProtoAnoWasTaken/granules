@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:stripped_mangrove_log",
+  "result": {
+    "id": "granules:stripped_mangrove_stump",
+    "count": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/polished_echo_shard_slab"
+    },
+    "type=double": {
+      "model": "granules:block/polished_echo_shard_block"
+    },
+    "type=top": {
+      "model": "granules:block/polished_echo_shard_slab_top"
+    }
+  }
+}

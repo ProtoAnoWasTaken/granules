@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:suspicious_sand"
+    },
+    "title": {
+      "translate": "advancement.granules.something_suspicious.title"
+    },
+    "description": {
+      "translate": "advancement.granules.something_suspicious.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "granules:call_me_paquerette",
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "granules:content_enabled",
+      "category": "grave_shovel"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": "granules:polished_echo_shard_block"
+  },
+  "result": {
+    "id": "granules:polished_echo_shard_stairs",
+    "count": 4
+  }
+}

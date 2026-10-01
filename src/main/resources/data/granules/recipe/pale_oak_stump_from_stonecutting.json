@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:pale_oak_log",
+  "result": {
+    "id": "granules:pale_oak_stump",
+    "count": 2
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "granules:crimson_stump",
+    "granules:warped_stump",
+    "granules:chiseled_crimson_stem",
+    "granules:chiseled_warped_stem",
+    "granules:stripped_crimson_stump",
+    "granules:stripped_warped_stump",
+    "granules:chiseled_stripped_crimson_stem",
+    "granules:chiseled_stripped_warped_stem"
+  ]
+}

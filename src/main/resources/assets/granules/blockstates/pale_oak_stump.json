@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/pale_oak_stump"
+    },
+    "type=top": {
+      "model": "granules:block/pale_oak_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/pale_oak_log"
+    }
+  }
+}

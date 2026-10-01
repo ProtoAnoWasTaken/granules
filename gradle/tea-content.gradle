@@ -1,0 +1,75 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+def teaResources = layout.buildDirectory.dir("generated/tea-resources")
+def vanillaAssets = file("../26.2_assets")
+def vanillaData = file("../26.2_minecraft")
+
+sourceSets.main.resources.srcDir(teaResources)
+
+tasks.register("generateTeaResources") {
+    inputs.file("gradle/tea-content.gradle")
+    inputs.files(fileTree(vanillaAssets).matching {
+        include("blockstates/sweet_berry_bush.json", "models/block/sweet_berry_bush_stage*.json")
+    })
+    inputs.files(fileTree(vanillaData).matching {
+        include("loot_table/blocks/sweet_berry_bush.json", "loot_table/harvest/sweet_berry_bush.json", "worldgen/configured_feature/berry_bush.json", "worldgen/placed_feature/patch_berry_common.json")
+    })
+    outputs.dir(teaResources)
+    doLast {
+        def output = teaResources.get().asFile
+        delete(output)
+        def writeJson = { String path, Object value ->
+            def target = new File(output, path)
+            target.parentFile.mkdirs()
+            target.text = JsonOutput.prettyPrint(JsonOutput.toJson(value)) + "\n"
+        }
+        def cloneJson = { File source, String path ->
+            def translated = source.text.replaceAll('minecraft:((?:block/|blocks/|harvest/)?)(sweet_berry_bush)', 'granules:$1tea_shrub')
+                .replace('minecraft:sweet_berries', 'granules:tea_leaves')
+                .replace('minecraft:berry_bush', 'granules:tea_shrub')
+            writeJson(path, new JsonSlurper().parseText(translated))
+        }
+        cloneJson(new File(vanillaAssets, "blockstates/sweet_berry_bush.json"), "assets/granules/blockstates/tea_shrub.json")
+        for (int age = 0; age <= 3; age++) {
+            cloneJson(new File(vanillaAssets, "models/block/sweet_berry_bush_stage${age}.json"), "assets/granules/models/block/tea_shrub_stage${age}.json")
+            writeJson("assets/granules/textures/block/tea_shrub_stage${age}.png.mcmeta", [texture: [mipmap_strategy: "dark_cutout"]])
+        }
+        cloneJson(new File(vanillaData, "loot_table/blocks/sweet_berry_bush.json"), "data/granules/loot_table/blocks/tea_shrub.json")
+        cloneJson(new File(vanillaData, "loot_table/harvest/sweet_berry_bush.json"), "data/granules/loot_table/harvest/tea_shrub.json")
+        cloneJson(new File(vanillaData, "worldgen/configured_feature/berry_bush.json"), "data/granules/worldgen/configured_feature/tea_shrub.json")
+        cloneJson(new File(vanillaData, "worldgen/placed_feature/patch_berry_common.json"), "data/granules/worldgen/placed_feature/patch_tea_shrub.json")
+        writeJson("assets/granules/items/tea_leaves.json", [model: [type: "minecraft:model", model: "granules:item/tea_leaves"]])
+        writeJson("assets/granules/models/item/tea_leaves.json", [parent: "minecraft:item/generated", textures: [layer0: "granules:item/tea_leaves"]])
+        def drinks = [
+            melon_juice: [color: 0xFFC44F, ingredients: ["minecraft:melon_slice", "minecraft:sugar_cane", "granules:tea_leaves", "minecraft:honey_bottle"]],
+            apple_juice: [color: 0xDBBF4F, ingredients: ["minecraft:apple", "minecraft:sugar_cane", "granules:tea_leaves", "minecraft:honey_bottle"]],
+            green_tea: [color: 0xDFCA62, ingredients: ["granules:tea_leaves", "minecraft:sugar_cane", "minecraft:potion"]],
+            white_tea: [color: 0xCDAF12, ingredients: ["granules:green_tea", "minecraft:poppy", "minecraft:blaze_powder"]],
+            yellow_tea: [color: 0xC38B0D, ingredients: ["granules:green_tea", "minecraft:dandelion", "minecraft:blaze_powder"]],
+            oolong_tea: [color: 0xB86707, ingredients: ["granules:green_tea", "minecraft:blue_orchid", "minecraft:blaze_powder"]],
+            earl_grey_tea: [color: 0x370E11, ingredients: ["granules:green_tea", "minecraft:lily_of_the_valley", "minecraft:blaze_powder"]],
+            chamomile_tea: [color: 0xC96A0A, ingredients: ["granules:tea_leaves", "minecraft:oxeye_daisy", "minecraft:honey_bottle"]],
+            desert_tea: [color: 0xE880CA, ingredients: ["granules:tea_leaves", "minecraft:cactus_flower", "minecraft:armadillo_scute", "minecraft:blaze_powder", "minecraft:potion"]]
+        ]
+        writeJson("assets/granules/models/item/tea.json", [parent: "minecraft:item/generated", textures: [layer0: "granules:item/tea_overlay", layer1: "granules:item/tea"]])
+        drinks.each { name, drink ->
+            writeJson("assets/granules/items/${name}.json", [model: [type: "minecraft:model", model: "granules:item/tea", tints: [[type: "minecraft:constant", value: drink.color - 16777216]]]])
+            writeJson("data/granules/recipe/${name}.json", [type: "granules:tea", category: "misc", ingredients: drink.ingredients, result: [id: "granules:${name}", count: 1]])
+            def ingredient = drink.ingredients[0]
+            writeJson("data/granules/advancement/recipes/misc/${name}.json", [parent: "minecraft:recipes/root", criteria: [has_ingredient: [trigger: "minecraft:inventory_changed", conditions: [items: [[items: ingredient]]]], has_the_recipe: [trigger: "minecraft:recipe_unlocked", conditions: [recipe: "granules:${name}"]]], requirements: [["has_ingredient", "has_the_recipe"]], rewards: [recipes: ["granules:${name}"]]])
+        }
+        ["bee_growables", "fall_damage_resetting", "fox_immune_to", "happy_ghast_avoids"].each { tag ->
+            writeJson("data/minecraft/tags/block/${tag}.json", [values: ["granules:tea_shrub"]])
+        }
+        writeJson("data/granules/recipe/green_dye_from_tea_leaves.json", [type: "minecraft:crafting_shapeless", category: "misc", group: "green_dye", ingredients: ["granules:tea_leaves"], result: [id: "minecraft:green_dye", count: 1]])
+        writeJson("data/granules/advancement/recipes/misc/green_dye_from_tea_leaves.json", [parent: "minecraft:recipes/root", criteria: [has_leaves: [trigger: "minecraft:inventory_changed", conditions: [items: [[items: "granules:tea_leaves"]]]], has_the_recipe: [trigger: "minecraft:recipe_unlocked", conditions: [recipe: "granules:green_dye_from_tea_leaves"]]], requirements: [["has_leaves", "has_the_recipe"]], rewards: [recipes: ["granules:green_dye_from_tea_leaves"]]])
+    }
+}
+
+tasks.named("processResources").configure {
+    dependsOn(tasks.named("generateTeaResources"))
+}
+tasks.named("sourcesJar").configure {
+    dependsOn(tasks.named("generateTeaResources"))
+}

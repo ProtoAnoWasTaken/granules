@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "granules:block/aspen_log_top",
+    "top": "granules:block/aspen_log_top",
+    "side": "granules:block/aspen_log"
+  }
+}

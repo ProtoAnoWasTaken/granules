@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/cherry_stump"
+    },
+    "type=top": {
+      "model": "granules:block/cherry_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/cherry_log"
+    }
+  }
+}

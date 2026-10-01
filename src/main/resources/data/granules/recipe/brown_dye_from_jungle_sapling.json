@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:flint",
+    "minecraft:jungle_sapling"
+  ],
+  "result": {
+    "id": "minecraft:brown_dye"
+  }
+}

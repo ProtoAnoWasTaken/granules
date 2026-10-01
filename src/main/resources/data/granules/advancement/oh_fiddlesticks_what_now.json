@@ -15,6 +15,66 @@
     "hidden": false
   },
   "criteria": {
+    "stick_feather_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_string_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_firework_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "stick_name_tag_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_feather_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_string_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_firework_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "bone_name_tag_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_feather_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_string_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_firework_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "end_rod_name_tag_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_feather_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_string_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_firework_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "blaze_name_tag_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_feather_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_string_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_firework_resin": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze_name_tag_resin": {
+      "trigger": "minecraft:impossible"
+    },
     "stick_feather_quartz": {
       "trigger": "minecraft:impossible"
     },
@@ -441,6 +501,66 @@
     }
   ],
   "requirements": [
+    [
+      "stick_feather_resin"
+    ],
+    [
+      "stick_string_resin"
+    ],
+    [
+      "stick_firework_resin"
+    ],
+    [
+      "stick_name_tag_resin"
+    ],
+    [
+      "bone_feather_resin"
+    ],
+    [
+      "bone_string_resin"
+    ],
+    [
+      "bone_firework_resin"
+    ],
+    [
+      "bone_name_tag_resin"
+    ],
+    [
+      "end_rod_feather_resin"
+    ],
+    [
+      "end_rod_string_resin"
+    ],
+    [
+      "end_rod_firework_resin"
+    ],
+    [
+      "end_rod_name_tag_resin"
+    ],
+    [
+      "blaze_feather_resin"
+    ],
+    [
+      "blaze_string_resin"
+    ],
+    [
+      "blaze_firework_resin"
+    ],
+    [
+      "blaze_name_tag_resin"
+    ],
+    [
+      "breeze_feather_resin"
+    ],
+    [
+      "breeze_string_resin"
+    ],
+    [
+      "breeze_firework_resin"
+    ],
+    [
+      "breeze_name_tag_resin"
+    ],
     [
       "stick_feather_quartz"
     ],

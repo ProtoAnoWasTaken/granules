@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "granules:polished_echo_shard_stairs",
+    "granules:echo_brick_stairs",
+    "granules:polished_amethyst_stairs",
+    "granules:amethyst_brick_stairs",
+    "granules:chorus_mosaic_stairs"
+  ]
+}

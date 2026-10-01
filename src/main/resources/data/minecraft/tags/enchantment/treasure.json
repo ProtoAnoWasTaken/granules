@@ -1,5 +1,7 @@
 {
   "values": [
+    "granules:butchery",
+    "granules:hearthearth",
     "granules:necrosoles",
     "granules:felling",
     "granules:radius"

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:stripped_birch_log"
+  },
+  "result": {
+    "id": "granules:stripped_birch_stump",
+    "count": 6
+  }
+}

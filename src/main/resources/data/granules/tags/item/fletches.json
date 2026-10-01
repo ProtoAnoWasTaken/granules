@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:feather",
+    "minecraft:string",
+    "minecraft:firework_rocket",
+    "minecraft:name_tag"
+  ]
+}

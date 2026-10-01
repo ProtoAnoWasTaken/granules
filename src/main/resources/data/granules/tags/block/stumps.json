@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "granules:oak_stump",
+    "granules:spruce_stump",
+    "granules:birch_stump",
+    "granules:jungle_stump",
+    "granules:acacia_stump",
+    "granules:dark_oak_stump",
+    "granules:mangrove_stump",
+    "granules:cherry_stump",
+    "granules:pale_oak_stump",
+    "granules:crimson_stump",
+    "granules:warped_stump",
+    "granules:aspen_stump",
+    "granules:stripped_oak_stump",
+    "granules:stripped_spruce_stump",
+    "granules:stripped_birch_stump",
+    "granules:stripped_jungle_stump",
+    "granules:stripped_acacia_stump",
+    "granules:stripped_dark_oak_stump",
+    "granules:stripped_mangrove_stump",
+    "granules:stripped_cherry_stump",
+    "granules:stripped_pale_oak_stump",
+    "granules:stripped_crimson_stump",
+    "granules:stripped_warped_stump",
+    "granules:stripped_aspen_stump"
+  ]
+}

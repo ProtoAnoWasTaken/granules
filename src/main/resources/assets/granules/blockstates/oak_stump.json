@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/oak_stump"
+    },
+    "type=top": {
+      "model": "granules:block/oak_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/oak_log"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "granules:aspen_log",
+    "granules:aspen_wood",
+    "granules:stripped_aspen_log",
+    "granules:stripped_aspen_wood",
+    "granules:chiseled_aspen_log",
+    "granules:chiseled_stripped_aspen_log"
+  ]
+}

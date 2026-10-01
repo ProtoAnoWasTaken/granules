@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "granules:block/mangrove_stump"
+    },
+    "type=top": {
+      "model": "granules:block/mangrove_stump_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/mangrove_log"
+    }
+  }
+}

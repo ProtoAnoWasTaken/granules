@@ -1,0 +1,36 @@
+package com.protoano.granules.mixin;
+
+import com.protoano.granules.world.HoneyloggingProperties;
+import com.protoano.granules.world.EnchantedCauldronProperties;
+import com.protoano.granules.world.SealedBarrelProperties;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
+
+@Mixin(Block.class)
+public abstract class BlockDefaultHoneyloggingMixin {
+	@ModifyVariable(method = "registerDefaultState", at = @At("HEAD"), argsOnly = true)
+	private BlockState granules$defaultToDryHoneylogging(BlockState state) {
+        if (state.hasProperty(com.protoano.granules.item.StateLocks.LOCKED)) {
+            state = state.setValue(com.protoano.granules.item.StateLocks.LOCKED, false);
+        }
+		if (state.hasProperty(com.protoano.granules.item.IronLockItem.INVERTED)) {
+			state = state.setValue(com.protoano.granules.item.IronLockItem.INVERTED, false);
+		}
+		if (state.hasProperty(HoneyloggingProperties.HONEYLOGGED)) {
+			state = state.setValue(HoneyloggingProperties.HONEYLOGGED, false);
+		}
+		if (state.hasProperty(EnchantedCauldronProperties.CONTENT)) {
+			state = state.setValue(EnchantedCauldronProperties.CONTENT, EnchantedCauldronProperties.Content.EMPTY);
+		}
+		if (state.hasProperty(EnchantedCauldronProperties.LEVEL)) {
+			state = state.setValue(EnchantedCauldronProperties.LEVEL, 0);
+		}
+		if (state.hasProperty(SealedBarrelProperties.SEALED)) {
+			state = state.setValue(SealedBarrelProperties.SEALED, false);
+		}
+		return state;
+	}
+}

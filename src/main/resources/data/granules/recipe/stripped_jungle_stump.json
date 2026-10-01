@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:stripped_jungle_log"
+  },
+  "result": {
+    "id": "granules:stripped_jungle_stump",
+    "count": 6
+  }
+}

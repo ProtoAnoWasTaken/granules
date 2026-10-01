@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:spruce_log"
+  },
+  "result": {
+    "id": "granules:spruce_stump",
+    "count": 6
+  }
+}

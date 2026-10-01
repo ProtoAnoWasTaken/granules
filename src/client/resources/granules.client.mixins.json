@@ -1,8 +1,27 @@
 {
   "required": true,
-  "package": "com.puppy.granules.client.mixin",
+  "package": "com.protoano.granules.client.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
+    "GranulesSplashMixin",
+    "SplashHitboxMixin",
+    "TitleScreenSplashMixin",
+    "CopperGolemUpgradeRendererMixin",
+    "CopperGolemUpgradeRenderStateMixin",
+    "PlayerTitleRenderStateMixin",
+    "PlayerTitleRendererMixin",
+    "TitleAdvancementWidgetMixin",
+    "TitleAdvancementWidgetAccessor",
+    "TitleAdvancementTabAccessor",
+    "TitleAdvancementsScreenMixin",
+    "BrewingBalanceScreenMixin",
+    "HearthearthRendererMixin",
+    "HearthearthRenderStateMixin",
+    "GraveShovelAnimationMixin",
+    "InvisibleChainmailMixin",
+    "GraveGhostVisibilityMixin",
+    "CustomSignGuiMixin",
+    "compat.EffortlessTargetMixin",
     "AbstractContainerScreenAccessor",
     "AvatarRendererOperaGloveMixin",
     "ItemInHandRendererOperaGloveMixin",
@@ -14,6 +33,9 @@
     "SheepRendererMixin",
     "SheepRenderStateMixin",
     "SheepWoolLayerMixin",
+    "ScreenAccessor",
+    "CreateWorldScreenMixin",
+    "RecipeBookKnowledgeTomeMixin",
     "WorldCreationUiStateMixin",
     "AdvancementTabMixin"
   ],
@@ -22,5 +44,6 @@
   },
   "overwrites": {
     "requireAnnotations": true
-  }
+  },
+  "plugin": "com.protoano.granules.mixin.GranulesMixinPlugin"
 }

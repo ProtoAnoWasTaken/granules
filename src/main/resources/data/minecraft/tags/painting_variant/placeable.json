@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:earth",
+    "minecraft:wind",
+    "minecraft:fire",
+    "minecraft:water",
+    "granules:hound",
+    "granules:kettle",
+    "granules:tallhound",
+    "granules:whimper",
+    "granules:longhound",
+    "granules:aurora",
+    "granules:cloud_fortress",
+    "granules:commodore",
+    "granules:fortune_spiral",
+    "granules:ice_wall",
+    "granules:otherworld",
+    "granules:polluere",
+    "granules:revere",
+    "granules:tetrachil",
+    "granules:wet_dry"
+  ]
+}

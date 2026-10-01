@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "LLL"
+  ],
+  "key": {
+    "L": "minecraft:stripped_warped_stem"
+  },
+  "result": {
+    "id": "granules:stripped_warped_stump",
+    "count": 6
+  }
+}

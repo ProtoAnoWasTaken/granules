@@ -15,23 +15,23 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.puppy.granules.GranulesMod"
+			"com.protoano.granules.GranulesMod"
 		],
 		"client": [
-			"com.puppy.granules.client.GranulesClient"
+			"com.protoano.granules.client.GranulesClient"
 		],
 		"modmenu": [
-			"com.puppy.granules.client.GranulesModMenu"
+			"com.protoano.granules.client.GranulesModMenu"
 		],
 		"jade": [
-			"com.puppy.granules.compat.DiscBurnerJadePlugin",
-			"com.puppy.granules.client.GranulesJadePlugin"
+			"com.protoano.granules.compat.DiscBurnerJadePlugin",
+			"com.protoano.granules.client.GranulesJadePlugin"
 		],
 		"rei_client": [
-			"com.puppy.granules.compat.GranulesReiPlugin"
+			"com.protoano.granules.compat.GranulesReiPlugin"
 		],
 		"rei_common": [
-			"com.puppy.granules.compat.GranulesReiCommonPlugin"
+			"com.protoano.granules.compat.GranulesReiCommonPlugin"
 		]
 	},
 	"mixins": [

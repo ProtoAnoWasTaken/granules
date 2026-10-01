@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "granules:echo_shard_block",
+  "result": {
+    "id": "granules:echo_shard_pillar",
+    "count": 1
+  }
+}
