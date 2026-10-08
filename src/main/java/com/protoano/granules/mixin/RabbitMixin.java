@@ -9,6 +9,8 @@ import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.animal.rabbit.Rabbit;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EntityReference;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -44,7 +46,7 @@ import java.util.Comparator;
 import java.util.EnumSet;
 
 @Mixin(Rabbit.class)
-public abstract class RabbitMixin implements KillerRabbitAccess {
+public abstract class RabbitMixin implements KillerRabbitAccess, OwnableEntity {
     @Unique
     private static final Identifier GRANULES_TAMED_HEALTH = Identifier.fromNamespaceAndPath("granules", "tamed_killer_rabbit_health");
     @Unique
@@ -88,6 +90,14 @@ public abstract class RabbitMixin implements KillerRabbitAccess {
         return !ContentManifest.get().isBanned(ContentManifest.Category.THE_BURROW)
             && rabbit.getVariant() == Rabbit.Variant.EVIL
             && granules$ownerUuid() != null;
+    }
+
+    @Override
+    public EntityReference<LivingEntity> getOwnerReference() {
+        if (!granules$isTamedKillerRabbit()) {
+            return null;
+        }
+        return EntityReference.of(granules$ownerUuid());
     }
 
     @Override

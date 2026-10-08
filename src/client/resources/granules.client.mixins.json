@@ -3,6 +3,10 @@
   "package": "com.protoano.granules.client.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
+    "compat.BetterAdvancementsScreenMixin",
+    "compat.BetterAdvancementTabAccessor",
+    "compat.BetterAdvancementWidgetAccessor",
+    "compat.BetterAdvancementWidgetMixin",
     "GranulesSplashMixin",
     "SplashHitboxMixin",
     "TitleScreenSplashMixin",

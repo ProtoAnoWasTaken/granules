@@ -19,6 +19,9 @@ public class GranulesMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+        if (mixinClassName.contains(".compat.BetterAdvancement")) {
+            return FabricLoader.getInstance().isModLoaded("betteradvancements");
+        }
         if (mixinClassName.contains(".compat.Effortless")) {
             return FabricLoader.getInstance().isModLoaded("effortlessbuilding");
         }
