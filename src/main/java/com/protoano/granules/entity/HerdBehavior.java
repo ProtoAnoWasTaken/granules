@@ -54,9 +54,6 @@ public final class HerdBehavior {
     }
 
     private static boolean canParticipate(PathfinderMob mob) {
-        if (com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.HERD_BEHAVIOR)) {
-            return false;
-        }
         if (!supported(mob.getType()) || mob.isNoAi() || mob.isLeashed() || mob.isVehicle() || mob.isPassenger()) {
             return false;
         }

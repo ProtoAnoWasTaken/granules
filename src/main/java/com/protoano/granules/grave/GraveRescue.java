@@ -55,7 +55,7 @@ public final class GraveRescue {
     }
 
     public static boolean holdingShovel(Player player) {
-        return !com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.GRAVE_SHOVEL)
+        return !com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.THE_BURROW)
             && player.isAlive() && !player.isSpectator()
             && (player.getMainHandItem().is(GraveContent.SHOVEL) || player.getOffhandItem().is(GraveContent.SHOVEL));
     }

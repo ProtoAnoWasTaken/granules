@@ -86,7 +86,7 @@ public final class BurrowSurfaceFeature extends Feature<NoneFeatureConfiguration
             ? Blocks.BIRCH_LOG.defaultBlockState()
             : Blocks.OAK_LOG.defaultBlockState();
         if (log.is(Blocks.BIRCH_LOG)
-            && !com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.ASPEN)
+            && !com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.THE_BURROW)
             && random.nextInt(com.protoano.granules.config.BalanceConfig.Setting.ASPEN_REPLACEMENT_DENOMINATOR.intValue()) == 0
             && com.protoano.granules.aspen.AspenTrees.placeNormal(level, base, random)) {
             return;

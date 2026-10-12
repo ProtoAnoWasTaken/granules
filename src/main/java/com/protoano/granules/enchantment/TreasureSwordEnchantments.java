@@ -25,9 +25,6 @@ public final class TreasureSwordEnchantments {
     public static void initialize() {
         Hearthearth.initialize();
         LootTableEvents.MODIFY.register((key, table, source, registries) -> {
-            if (com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.TREASURE_SWORDS)) {
-                return;
-            }
             if (!source.isBuiltin() || !key.identifier().getNamespace().equals("minecraft")) {
                 return;
             }

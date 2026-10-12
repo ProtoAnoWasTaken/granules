@@ -23,7 +23,7 @@
   "fabric:load_conditions": [
     {
       "condition": "granules:content_enabled",
-      "category": "grave_shovel"
+      "category": "the_burrow"
     }
   ]
 }

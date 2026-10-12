@@ -41,9 +41,6 @@ public final class HostileDeterrence {
     }
 
     public static Threat findThreat(Mob mob) {
-        if (com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.CAMPFIRE_DETERRENCE)) {
-            return null;
-        }
         if (!(fearsCampfires(mob) || mob instanceof Creeper) || !(mob.level() instanceof ServerLevel level) || mob.isNoAi()) {
             return null;
         }

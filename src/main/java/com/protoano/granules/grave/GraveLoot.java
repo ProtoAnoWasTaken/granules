@@ -21,7 +21,7 @@ public final class GraveLoot {
     }
 
     public static void chestLoot(Container container, ServerLevel level, long seed, long position, float luck) {
-        if (com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.GRAVE_SHOVEL)) {
+        if (com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.THE_BURROW)) {
             return;
         }
         if (!level.dimension().equals(RabbitHoleContent.BURROW) || !(container instanceof ChestBlockEntity)) {
@@ -41,7 +41,7 @@ public final class GraveLoot {
     }
 
     public static boolean eligibleZombie(LivingEntity entity) {
-        if (com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.GRAVE_SHOVEL)) {
+        if (com.protoano.granules.config.ContentManifest.get().isBanned(com.protoano.granules.config.ContentManifest.Category.THE_BURROW)) {
             return false;
         }
         if (entity.getType() != EntityTypes.ZOMBIE || !(entity.level() instanceof ServerLevel level)
