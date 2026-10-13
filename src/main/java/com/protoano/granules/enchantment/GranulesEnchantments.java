@@ -41,7 +41,6 @@ public final class GranulesEnchantments {
     public static final ResourceKey<Enchantment> CURSE_OF_COMBUSTION = key("curse_of_combustion");
     public static final ResourceKey<Enchantment> CURSE_OF_CRUMPLING = key("curse_of_crumpling");
     public static final ResourceKey<Enchantment> CURSE_OF_SLACK = key("curse_of_slack");
-    private static final Identifier STEP_MODIFIER = id("high_step");
     private static final Identifier BLOCK_REACH_MODIFIER = id("block_reach");
     private static final Identifier ENTITY_REACH_MODIFIER = id("entity_reach");
     private static final Identifier WATER_MOVEMENT_MODIFIER = id("necrosoles_water_movement");
@@ -51,6 +50,22 @@ public final class GranulesEnchantments {
     }
 
     public static void initialize() {
+        net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents.MODIFY.register(context -> {
+            var armorMaterials = java.util.Map.of(
+                net.minecraft.world.item.Items.LEATHER_HORSE_ARMOR, net.minecraft.world.item.Items.LEATHER_CHESTPLATE,
+                net.minecraft.world.item.Items.COPPER_HORSE_ARMOR, net.minecraft.world.item.Items.COPPER_CHESTPLATE,
+                net.minecraft.world.item.Items.IRON_HORSE_ARMOR, net.minecraft.world.item.Items.IRON_CHESTPLATE,
+                net.minecraft.world.item.Items.GOLDEN_HORSE_ARMOR, net.minecraft.world.item.Items.GOLDEN_CHESTPLATE,
+                net.minecraft.world.item.Items.DIAMOND_HORSE_ARMOR, net.minecraft.world.item.Items.DIAMOND_CHESTPLATE,
+                net.minecraft.world.item.Items.NETHERITE_HORSE_ARMOR, net.minecraft.world.item.Items.NETHERITE_CHESTPLATE
+            );
+            armorMaterials.forEach((horseArmor, playerArmor) -> {
+                context.modify(horseArmor, builder -> {
+                    builder.set(net.minecraft.core.component.DataComponents.ENCHANTABLE,
+                        playerArmor.components().get(net.minecraft.core.component.DataComponents.ENCHANTABLE));
+                });
+            });
+        });
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             for (ServerPlayer player : server.getPlayerList().getPlayers()) {
                 updatePlayer(player);
@@ -77,8 +92,6 @@ public final class GranulesEnchantments {
     public static void updatePlayer(ServerPlayer player) {
         ServerLevel level = player.level();
         ItemStack boots = player.getItemBySlot(EquipmentSlot.FEET);
-        int highStep = level(level, boots, HIGH_STEP);
-        applyModifier(player.getAttribute(Attributes.STEP_HEIGHT), STEP_MODIFIER, highStep, AttributeModifier.Operation.ADD_VALUE);
         ItemStack reachStack = player.getMainHandItem();
         if (player.getOffhandItem().is(PalePeltEquipment.OPERA_GLOVE)) {
             reachStack = player.getOffhandItem();

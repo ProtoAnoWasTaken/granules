@@ -1,6 +1,7 @@
 {
   "slots": [
-    "feet"
+    "feet",
+    "body"
   ],
   "min_cost": {
     "per_level_above_first": 15,
@@ -16,5 +17,19 @@
   },
   "max_level": 2,
   "weight": 5,
-  "supported_items": "#minecraft:enchantable/foot_armor"
+  "supported_items": "#granules:enchantable/high_step_supported_items",
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "granules:high_step",
+        "attribute": "minecraft:step_height",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1.0,
+          "per_level_above_first": 1.0
+        },
+        "operation": "add_value"
+      }
+    ]
+  }
 }

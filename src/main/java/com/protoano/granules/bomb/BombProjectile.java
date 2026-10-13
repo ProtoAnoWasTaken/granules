@@ -117,7 +117,8 @@ public class BombProjectile extends ThrowableItemProjectile {
             }
             BlockState state = level.getBlockState(pos);
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity == null && !PoiTypes.hasPoi(state)) {
+            if ((state.isAir() || state.getBlock() instanceof net.minecraft.world.level.block.LiquidBlock)
+                && blockEntity == null && !PoiTypes.hasPoi(state)) {
                 level.setBlockAndUpdate(pos.immutable(), Blocks.DIRT.defaultBlockState());
             }
         }

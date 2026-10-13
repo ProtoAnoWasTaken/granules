@@ -41,7 +41,8 @@
     "CreateWorldScreenMixin",
     "RecipeBookKnowledgeTomeMixin",
     "WorldCreationUiStateMixin",
-    "AdvancementTabMixin"
+    "AdvancementTabMixin",
+    "NorthCompassMixin"
   ],
   "injectors": {
     "defaultRequire": 1

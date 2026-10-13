@@ -167,7 +167,8 @@
     "NecrosolesMovementMixin",
     "NecrosolesPhysicsMixin",
     "ShieldThornsMixin",
-    "IronGolemFilterMixin"
+    "IronGolemFilterMixin",
+    "PiglinSafeArmorMixin"
   ],
   "client": [
     "client.FogRendererHoneyMixin",

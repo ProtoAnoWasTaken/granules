@@ -42,6 +42,11 @@ tasks.register("generateTeaResources") {
         writeJson("assets/granules/items/tea_leaves.json", [model: [type: "minecraft:model", model: "granules:item/tea_leaves"]])
         writeJson("assets/granules/models/item/tea_leaves.json", [parent: "minecraft:item/generated", textures: [layer0: "granules:item/tea_leaves"]])
         def drinks = [
+            golden_carrot_juice: [color: 0xE0DA5E, ingredients: ["minecraft:golden_carrot", "minecraft:sugar_cane", "granules:tea_leaves", "minecraft:honey_bottle"]],
+            glistering_melon_juice: [color: 0xE0DA5E, ingredients: ["minecraft:glistering_melon_slice", "minecraft:sugar_cane", "granules:tea_leaves", "minecraft:honey_bottle"]],
+            carrot_juice: [color: 0xDBAF84, ingredients: ["minecraft:carrot", "minecraft:sugar_cane", "granules:tea_leaves", "minecraft:honey_bottle"]],
+            glow_berry_juice: [color: 0xCFBE5D, ingredients: ["minecraft:glow_berries", "minecraft:glow_berries", "minecraft:sugar_cane", "minecraft:potion"]],
+            sweet_berry_juice: [color: 0xCF5D77, ingredients: ["minecraft:sweet_berries", "minecraft:sweet_berries", "minecraft:sugar_cane", "minecraft:potion"]],
             melon_juice: [color: 0xFFC44F, ingredients: ["minecraft:melon_slice", "minecraft:sugar_cane", "granules:tea_leaves", "minecraft:honey_bottle"]],
             apple_juice: [color: 0xDBBF4F, ingredients: ["minecraft:apple", "minecraft:sugar_cane", "granules:tea_leaves", "minecraft:honey_bottle"]],
             green_tea: [color: 0xDFCA62, ingredients: ["granules:tea_leaves", "minecraft:sugar_cane", "minecraft:potion"]],

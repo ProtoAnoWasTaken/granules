@@ -10,6 +10,11 @@ import net.minecraft.world.effect.MobEffects;
 public enum TeaKind {
     MELON_JUICE(0xFFC44F, false, true, effect(MobEffects.REGENERATION, 30, 0)),
     APPLE_JUICE(0xDBBF4F, false, true, effect(MobEffects.SPEED, 30, 0)),
+    SWEET_BERRY_JUICE(0xCF5D77, false, true, effect(MobEffects.JUMP_BOOST, 30, 0)),
+    GLOW_BERRY_JUICE(0xCFBE5D, false, true, effect(MobEffects.GLOWING, 30, 0)),
+    CARROT_JUICE(0xDBAF84, false, true, effect(MobEffects.NIGHT_VISION, 30, 0)),
+    GLISTERING_MELON_JUICE(0xE0DA5E, false, true, effect(MobEffects.REGENERATION, 90, 0)),
+    GOLDEN_CARROT_JUICE(0xE0DA5E, false, true, effect(MobEffects.NIGHT_VISION, 90, 0)),
     GREEN_TEA(0xDFCA62, true, false, effect(MobEffects.SATURATION, 60, 0), effect(MobEffects.JUMP_BOOST, 60, 0)),
     WHITE_TEA(0xCDAF12, true, false, effect(MobEffects.ABSORPTION, 60, 1), effect(MobEffects.STRENGTH, 60, 0)),
     YELLOW_TEA(0xC38B0D, true, false, effect(MobEffects.LUCK, 60, 0), effect(MobEffects.NIGHT_VISION, 60, 0)),

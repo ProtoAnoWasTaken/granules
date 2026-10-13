@@ -1,7 +1,8 @@
 {
   "values": [
     "#minecraft:enchantable/mace",
-    "#minecraft:axes"
+    "#minecraft:axes",
+    "granules:grave_shovel"
   ],
   "replace": false
 }

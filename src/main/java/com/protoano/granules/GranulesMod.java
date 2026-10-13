@@ -222,6 +222,15 @@ public class GranulesMod implements ModInitializer {
 	public static final BlockItem OLD_WORLD_CYAN_ROSE_ITEM = OLD_WORLD_CYAN_ROSE_REGISTRATION.item();
 	public static final Block POTTED_OLD_WORLD_ROSE = registerPottedOldWorldRose("potted_old_world_rose", OLD_WORLD_ROSE);
 	public static final Block POTTED_OLD_WORLD_CYAN_ROSE = registerPottedOldWorldRose("potted_old_world_cyan_rose", OLD_WORLD_CYAN_ROSE);
+    public static final Holder.Reference<net.minecraft.world.effect.MobEffect> RETURN_TO_SPAWN = Registry.registerForHolder(
+        BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(MOD_ID, "return_to_spawn"),
+        new com.protoano.granules.effect.ReturnToSpawnEffect());
+    public static final Holder.Reference<Potion> NOSTALGIA = Registry.registerForHolder(
+        BuiltInRegistries.POTION, Identifier.fromNamespaceAndPath(MOD_ID, "nostalgia"),
+        new Potion("nostalgia", new MobEffectInstance(RETURN_TO_SPAWN, 1, 0)));
+    public static final Holder.Reference<Potion> STRONG_NOSTALGIA = Registry.registerForHolder(
+        BuiltInRegistries.POTION, Identifier.fromNamespaceAndPath(MOD_ID, "strong_nostalgia"),
+        new Potion("nostalgia", new MobEffectInstance(RETURN_TO_SPAWN, 1, 1)));
 	public static final Holder.Reference<Potion> WHEAT_MASTER = registerWheatMasterPotion();
 	public static final Holder.Reference<Potion> LONG_WHEAT_MASTER = registerLongWheatMasterPotion();
 	public static final Holder.Reference<Potion> STRONG_WHEAT_MASTER = registerStrongWheatMasterPotion();
@@ -374,6 +383,8 @@ public class GranulesMod implements ModInitializer {
 			OldWorldCod::checkOldWorldCodSpawnRules
 		);
 		FabricPotionBrewingBuilder.BUILD.register(builder -> {
+            builder.addMix(Potions.AWKWARD, Items.CHORUS_FRUIT, NOSTALGIA);
+            builder.addMix(NOSTALGIA, Items.GLOWSTONE_DUST, STRONG_NOSTALGIA);
 			builder.addMix(Potions.AWKWARD, Items.EMERALD_BLOCK, Potions.LUCK);
 			builder.addMix(Potions.LUCK, Items.REDSTONE, LONG_LUCK);
 			builder.addMix(Potions.LUCK, Items.GLOWSTONE_DUST, STRONG_LUCK);
