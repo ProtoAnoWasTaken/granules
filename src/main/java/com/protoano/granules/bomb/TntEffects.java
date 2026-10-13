@@ -50,8 +50,8 @@ public final class TntEffects {
             if (center.distSqr(position) <= radius * radius) {
                 BlockState state = level.getBlockState(position);
                 BlockEntity blockEntity = level.getBlockEntity(position);
-                if (blockEntity == null && !PoiTypes.hasPoi(state)
-                    && !(state.getBlock() instanceof net.minecraft.world.level.block.TntBlock)) {
+                if ((state.isAir() || state.getBlock() instanceof net.minecraft.world.level.block.LiquidBlock)
+                    && blockEntity == null && !PoiTypes.hasPoi(state)) {
                     level.setBlockAndUpdate(position.immutable(), Blocks.DIRT.defaultBlockState());
                 }
             }
